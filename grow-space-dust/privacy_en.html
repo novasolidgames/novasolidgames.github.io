@@ -36,7 +36,7 @@
       <p>This is an English translation of the Korean Privacy Policy. If the two versions differ, the Korean version prevails to the extent permitted by the laws of the country where you live.</p>
 
       <h3>1. About This Privacy Policy</h3>
-      <p>NovaSolidGames (the “Company”) processes users’ personal data as described below in order to provide Grow Space Dust: Idle Clicker (the “Service”).</p>
+      <p>노바솔리드게임즈 (NovaSolidGames, the “Company”) processes users’ personal data as described below in order to provide Grow Space Dust: Idle Clicker (the “Service”).</p>
       <p>The Company values users’ personal data and complies with the Personal Information Protection Act of Korea and other applicable laws. This Privacy Policy explains for what purposes and in what ways users’ personal data is used and how it is protected.</p>
       <p>This Policy can be viewed at any time on the consent screen shown when the game is first started and in ‘Lobby &gt; Settings &gt; View Terms’.</p>
       <p>When the Company amends this Policy, it announces the change from 7 days before the effective date through a notice shown when the game starts and on the store’s app page. If important matters such as the data collected, the purposes of use or provision to third parties change, the Company announces it from 30 days before, asks for consent again when the game starts, and does not treat a user as having agreed to the changes merely because the user did not object.</p>
@@ -70,7 +70,15 @@
           </tr>
           <tr>
             <td><p>When purchasing paid products (if paid products are provided)</p></td>
-            <td><p>Order number (including the store order number), product purchased, amount paid, payment date, and whether the purchased currency or benefit has been used (fully used, refund status). Payment method information such as card numbers is handled by the store, and the Company does not receive it.</p></td>
+            <td><p>Order number (including the store order number), a hash of the purchase token, product purchased, amount paid, payment date, and whether the purchased currency or benefit has been used (fully used, refund status). For the Check-in Pass, the round purchased and the version of its reward table are also recorded. Payment method information such as card numbers is handled by the store, and the Company does not receive it.</p></td>
+          </tr>
+          <tr>
+            <td><p>When receiving a check-in reward that gives Skin Tickets or a Check-in Pass bonus reward</p></td>
+            <td><p>Check-in type, round, day number, kind and amount of the reward, a request identifier, and the approval time. Check-in dates and other free rewards received are recorded only on the device and are not sent to the server.</p></td>
+          </tr>
+          <tr>
+            <td><p>When receiving a reward by mail or coupon</p></td>
+            <td><p>Identifier of the mail or coupon, the reward granted, and the approval time</p></td>
           </tr>
           <tr>
             <td><p>When contacting customer support</p></td>
@@ -93,7 +101,8 @@
         <li><p>Keeping and loading game progress on the server, and recovering the account when the device changes</p></li>
         <li><p>Providing features in which the nickname, score and country (flag) are visible to other users, such as rankings</p></li>
         <li><p>Providing ads and granting rewards for watching ads</p></li>
-        <li><p>Confirming and delivering purchases of paid products and recovering purchase history (if paid products are provided)</p></li>
+        <li><p>Confirming and delivering purchases of paid products, recovering purchase history, confirming refunds and recovering refunded items, and calculating partial refunds of the Check-in Pass</p></li>
+        <li><p>Preventing duplicate grants of check-in rewards and of mail and coupon rewards</p></li>
         <li><p>Preventing and sanctioning abuse, operating naming policies such as for nicknames, keeping records for dispute resolution, and handling customer inquiries</p></li>
         <li><p>Producing usage statistics and improving the Service. This may be done in a form that does not identify specific individuals.</p></li>
         <li><p>Delivering notices such as changes to the Terms of Service and this Privacy Policy, and recording and proving consent</p></li>
@@ -113,7 +122,7 @@
             <tbody>
               <tr>
                 <td><p>AFI Inc. (BACKND)</p></td>
-                <td><p>Account authentication, storage of game progress and rankings, storage of consent records, purchase receipt verification and storage of purchase and refund records, server operation, usage statistics</p></td>
+                <td><p>Account authentication, storage of game progress and rankings, storage of consent records, purchase receipt verification and storage of purchase and refund records, approval records for check-in rewards and for mail and coupon rewards, receiving customer inquiries, server operation, usage statistics</p></td>
                 <td><p>Until account deletion or the end of the entrustment contract</p></td>
               </tr>
             </tbody>
@@ -133,16 +142,19 @@
                 <td><p>Google account sign-in and linking (only for users who use this feature)</p></td>
               </tr>
               <tr>
+                <td><p>Google LLC - Google Play (USA)</p></td>
+                <td><p>Purchase token, order number, product ID</p></td>
+                <td><p>Confirming payments and checking refund status (only for users who buy paid products)</p></td>
+              </tr>
+              <tr>
                 <td><p>Unity Technologies / ironSource (USA, Israel)</p></td>
-                <td rowspan="5"><p>Advertising identifier, device information, IP address, ad viewing and interaction records</p></td>
-                <td rowspan="5"><p>Providing ads, measuring ad performance, preventing ad fraud</p></td>
+                <td rowspan="2"><p>Advertising identifier, device information, IP address, ad viewing and interaction records</p></td>
+                <td rowspan="2"><p>Providing ads, measuring ad performance, preventing ad fraud</p></td>
               </tr>
               <tr><td><p>Google LLC - AdMob (USA)</p></td></tr>
-              <tr><td><p>AppLovin Corporation (USA)</p></td></tr>
-              <tr><td><p>Pangle - Bytedance Pte. Ltd. (Singapore)</p></td></tr>
-              <tr><td><p>Liftoff (Vungle) (USA)</p></td></tr>
             </tbody>
           </table>
+          <p>This data is sent over the network when the Service is used and is kept for the period set in each company’s privacy policy. Users who do not want this international transfer can avoid the relevant features (Google sign-in, purchases of paid products) or refuse the advertising identifier in the way described in section 8, but because the advertising companies’ programs are included in the game, the sending of device information and IP addresses cannot be prevented completely while the Service is used.</p>
           <p>Users can refuse the collection of the advertising identifier and personalized ads in the way described in section 8. Even if they refuse, ads may still be shown, but ads tailored to the user’s interests are not provided.</p>
         </li>
         <li><p>When the user has consented in advance</p></li>
@@ -153,8 +165,9 @@
       <h3>5. Retention and Destruction of Personal Data</h3>
       <ol>
         <li><p>Users’ personal data is destroyed without delay upon account deletion or when the purpose of collection has been achieved.</p></li>
-        <li><p>When the user deletes the account in the game, the deletion is accepted immediately, and account information, the nickname and game progress kept on the server are deleted within 1 hour. Game progress stored on the device is deleted the next time the game starts after deletion. Deletion cannot be canceled. If deletion is requested on the web account deletion request page (section 6), the data kept on the server is deleted 7 days after the request, and if the user signs in with the same account within those 7 days (including the automatic sign-in when the app starts), the deletion request is canceled.</p></li>
-        <li><p>Consent records are kept until account deletion. The records on the server are deleted together with the account when it is deleted, and the records on the device are deleted the next time the game starts after deletion.</p></li>
+        <li><p>When the user requests account deletion, use of the account is restricted immediately, and to allow the request to be canceled, account information, the nickname, game progress kept on the server and related records are kept for 30 days from the request and then deleted without undue delay. During that period they are processed only as necessary for cancellation and resumption, identity verification, refunds and legal obligations. If the user cancels within 30 days, use resumes with the retained information. If the user requests immediate deletion, the data is deleted without undue delay after review. Requests made in the game and by email (section 6) are handled the same way.</p></li>
+        <li><p>Deleting data on the server does not remotely erase files on the device. Game progress, sign-in information and consent records stored on the device can be cleared with [Clear data on this device] in the game, by clearing the app data in the device settings, or by uninstalling the app.</p></li>
+        <li><p>Consent records are kept until the account is deleted.</p></li>
         <li><p>Nicknames, scores and countries already registered in rankings may remain visible until that ranking period (daily, weekly or monthly) resets, which is at most 1 month.</p></li>
         <li><p>Deleting the app alone does not delete the account on the server. If you want your account and data deleted, please delete the account in the ways described in section 6.</p></li>
         <li>
@@ -172,8 +185,8 @@
       <h3>6. Users’ Rights and How to Exercise Them</h3>
       <ol>
         <li><p>In the game at ‘Lobby &gt; Settings’, users can check their Player ID, account type (guest or Google), nickname and last server save time, change the nickname (once) and link a Google account.</p></li>
-        <li><p>Users can withdraw consent and request deletion of their account and data at any time at ‘Lobby &gt; Settings &gt; Delete Account’. Guest accounts can be deleted the same way.</p></li>
-        <li><p>If the app is already deleted or the user cannot access the game, a user with a linked Google account can request deletion on the <a href="https://storage.thebackend.io/1ea3f14d34e89530ea88b3245bc82dc17d5f52ce1554049f19fce9219a847cfce18bb8891998af91b532efb9a3ef828b39c5513c1e8600aec55c5da6ee82f7ed443f6428233d8419e4997641d2/withdraw/ko/index.html" target="_blank">account deletion request page</a> listed on the store’s app page, and the account and the data kept on the server are deleted 7 days after the request. If the user signs in with the same account within those 7 days (including the automatic sign-in when the app starts), the deletion request is canceled. Guest users, or users who cannot use this page, can request deletion by sending their Player ID and nickname to the email address in section 10. The Company processes the request without delay after confirming the user’s identity. For guest accounts, processing may be limited if there is no information, such as the Player ID, that identifies the account, because identity confirmation is difficult.</p></li>
+        <li><p>Users can withdraw consent and request deletion of their account and data at any time at ‘Lobby &gt; Settings &gt; Delete Account’, handled as described in section 5, item 2. Guest accounts can be requested the same way.</p></li>
+        <li><p>If the app is already deleted or the user cannot access the game, the user can request deletion by sending the Player ID, nickname and other details to the email address in section 10 as explained on the <a href="https://novasolidgames.github.io/grow-space-dust/delete-account.html#en" target="_blank">account deletion page</a>. There is no need to reinstall the app. The Company handles the request as described in section 5, item 2 after confirming the user’s identity, and never asks for a password. For guest accounts, processing may be limited if there is no information, such as the Player ID, that identifies the account, because identity confirmation is difficult.</p></li>
         <li><p>Users who wish to access, correct, delete or suspend the processing of personal data that cannot be checked in the game can also make requests to the email address in section 10 or through ‘Lobby &gt; Settings &gt; Contact Us’.</p></li>
         <li><p>Depending on the laws of the country where they live, users may request restriction of processing, object to processing, or request transfer of their data to another business, and may withdraw consent at any time for processing based on consent. Withdrawing consent does not affect processing carried out before the withdrawal.</p></li>
         <li><p>The Company informs the user of the result within 10 days of receiving a request. If the laws of the country where the user lives set a shorter period, the Company follows that period.</p></li>
@@ -202,12 +215,13 @@
           <tr><th><p><br></p></th><th><p>Privacy officer</p></th></tr>
         </thead>
         <tbody>
-          <tr><td><p>Name</p></td><td><p>Jin Yonghun</p></td></tr>
-          <tr><td><p>Position</p></td><td><p>Project Manager</p></td></tr>
+          <tr><td><p>Name</p></td><td><p>진용훈 (JIN YONGHUN)</p></td></tr>
+          <tr><td><p>Position</p></td><td><p>Representative</p></td></tr>
           <tr><td><p>Phone</p></td><td><p>+82-10-6412-6185</p></td></tr>
           <tr><td><p>Email</p></td><td><p>novasolidgames@gmail.com</p></td></tr>
         </tbody>
       </table>
+      <p>Controller: 노바솔리드게임즈 (NovaSolidGames), representative 진용훈 (JIN YONGHUN), business registration number (Korea) 395-30-02257, B-dong 1601-ho, 606 Seobusaet-gil, Geumcheon-gu, Seoul, Republic of Korea</p>
       <p>Opinions or complaints about personal data can be sent to the officer above, or handling can be requested from the following Korean authorities.</p>
       <p>- Personal Information Infringement Report Center (phone: 118,&nbsp;<a href="http://privacy.kisa.or.kr/" rel="noreferrer" target="_blank">http://privacy.kisa.or.kr/</a>)</p>
       <p>- Supreme Prosecutors’ Office Cyber Crime Investigation Division (phone: 02-3480-3570,&nbsp;<a href="http://www.spo.go.kr/" rel="noreferrer" target="_blank">http://www.spo.go.kr/</a>)</p>
@@ -215,8 +229,11 @@
       <p>Users who live outside the Republic of Korea may also lodge a complaint with the data protection authority of the country where they live.</p>
       <p>For disputes concerning personal data, handling can be requested from the Personal Information Dispute Mediation Committee (phone: 1833-6972,&nbsp;<a href="http://www.kopico.go.kr/" rel="noreferrer" target="_blank">http://www.kopico.go.kr/</a>).</p>
 
-      <h3>11. Effective Date</h3>
-      <p>This Privacy Policy takes effect on October 13, 2026.</p>
+      <h3>11. Country-specific Supplementary Provisions</h3>
+      <p>For users who live in Japan, Taiwan or the United States, the supplementary provisions for that country apply together with this Policy, and they prevail where they provide differently from this Policy. The supplementary provisions are posted in the same places as this Policy.</p>
+
+      <h3>12. Effective Date</h3>
+      <p>This Privacy Policy takes effect on November 1, 2026.</p>
     </div>
     <footer
       style="width: 100%; text-align: center; border-top: 1px solid #2e313f;"
