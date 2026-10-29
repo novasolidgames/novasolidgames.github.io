@@ -28,7 +28,7 @@
       heroTitle: "From a speck of dust.<br><em>To a galaxy of your own.</em>",
       heroDescription: "Every tap helps your star grow. Discover stellar birth, spectacular supernovae, and a journey that continues beyond the black hole.",
       seeGameplay: "Explore the game", tagIdle: "Idle clicker", tagSpace: "Stellar evolution",
-      gameplayAlt: "Actual gameplay showing a glowing star during Fever Time", phoneCaption: "A whole universe begins with a little tap", scroll: "Discover your universe",
+      gameplayAlt: "English gameplay screenshot showing a growing star", phoneCaption: "A whole universe begins with a little tap", scroll: "Discover your universe",
       journeyTitle: "A star's ending.<br><em>A new beginning.</em>",
       journeyDescription: "Gather dust, grow a star, and discover the many fates it can meet. Becoming a black hole is just another beginning.",
       stageDust: "Start with a little dust", stageDustDescription: "Tap space dust to bring your very first star to life.",
@@ -50,7 +50,7 @@
   const dialog = document.querySelector(".lightbox");
   const lightboxImage = document.querySelector("[data-lightbox-image]");
   let galleryIndex = 0;
-  let language = "ko";
+  let language = "en";
   let downloadUrl = "";
   // 임의 프로토콜이나 외부 주소를 다운로드 설정으로 사용하지 않는다.
   try {
@@ -87,6 +87,7 @@
     const logo = document.querySelector("[data-logo]");
     logo.src = `assets/logo-${language}.webp`;
     logo.alt = text.logoAlt;
+    document.querySelector(".phone img").src = language === "en" ? "assets/gameplay-en.webp" : "assets/gameplay.webp";
     document.querySelectorAll("[data-badge]").forEach(image => { image.src = `assets/google-play-${language}.png`; image.alt = text.badgeAlt; });
     galleryImages.forEach(image => { image.src = `assets/screen-${image.dataset.screen}-${language}.webp`; });
     document.querySelectorAll("[data-download-state]").forEach(element => { element.textContent = downloadUrl ? text.ready : text.pending; element.classList.remove("attention"); element.setAttribute("role", "status"); });
@@ -98,9 +99,11 @@
       link.href = `${page}${suffix}.html${hash}`;
     });
     if (dialog.open) updateLightbox();
-    try { localStorage.setItem("gsd-language", language); } catch { /* 저장 불가 시 현재 화면에만 적용 */ }
   }
-  document.querySelectorAll("[data-language]").forEach(button => button.addEventListener("click", () => setLanguage(button.dataset.language)));
+  document.querySelectorAll("[data-language]").forEach(button => button.addEventListener("click", () => {
+    setLanguage(button.dataset.language);
+    try { localStorage.setItem("gsd-language-choice", language); } catch { /* 저장 불가 시 현재 화면에만 적용 */ }
+  }));
   if (!downloadUrl) document.querySelectorAll("[data-download]").forEach(button => button.addEventListener("click", () => {
     const status = document.getElementById(button.getAttribute("aria-describedby"));
     status.textContent = "";
@@ -125,8 +128,8 @@
   dialog.addEventListener("keydown", event => {
     if (event.key === "ArrowRight" || event.key === "ArrowLeft") { event.preventDefault(); advanceGallery(event.key === "ArrowRight" ? 1 : -1); }
   });
-  let initialLanguage = navigator.language.toLowerCase().startsWith("ko") ? "ko" : "en";
-  try { initialLanguage = localStorage.getItem("gsd-language") || initialLanguage; } catch { /* 기본 브라우저 언어 사용 */ }
+  let initialLanguage = "en";
+  try { initialLanguage = localStorage.getItem("gsd-language-choice") || initialLanguage; } catch { /* 저장된 선택이 없으면 영어 사용 */ }
   const requestedLanguage = new URLSearchParams(location.search).get("lang");
   if (requestedLanguage === "ko" || requestedLanguage === "en") initialLanguage = requestedLanguage;
   setLanguage(initialLanguage);
