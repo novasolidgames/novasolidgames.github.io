@@ -24,7 +24,10 @@
       .hero img { width: 100%; max-width: 640px; height: auto; border-radius: 20px; border: 1px solid var(--line); }
       h1 { font-size: clamp(28px, 6vw, 40px); line-height: 1.2; margin: 24px 0 8px; }
       .tagline { font-size: 18px; color: var(--muted); margin: 0 0 20px; }
-      .soon { display: inline-block; padding: 10px 18px; border-radius: 12px; background: var(--ink); color: #fff; font-weight: 600; }
+      .store { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+      .store a { display: inline-block; }
+      .store img { height: 64px; width: auto; display: block; }
+      .store-note { margin: 0; font-size: 15px; color: var(--muted); }
       .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; padding: 8px 0 32px; }
       .feature { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px; }
       .feature b { display: block; margin-bottom: 4px; }
@@ -51,7 +54,13 @@
           <span lang="ko">휴대폰 하나로 최대 4명이 함께 즐기는 미니게임 모음</span>
           <span lang="en">Quick mini-games for up to 4 players on one phone</span>
         </p>
-        <span class="soon"><span lang="ko">Google Play 출시 예정</span><span lang="en">Coming soon to Google Play</span></span>
+        <div class="store" data-store>
+          <a href="#" data-store-badge>
+            <img lang="ko" src="assets/google-play-ko.png" alt="Google Play에서 다운로드" width="646" height="250" />
+            <img lang="en" src="assets/google-play-en.png" alt="Get it on Google Play" width="646" height="250" />
+          </a>
+          <p class="store-note" data-store-note hidden><span lang="ko">곧 출시돼요! 출시되면 이 버튼으로 받을 수 있어요.</span><span lang="en">Coming soon! You can get it here once it launches.</span></p>
+        </div>
       </section>
 
       <section class="features">
@@ -88,6 +97,8 @@
         © NovaSolidGames
       </footer>
     </div>
+    <script src="site-config.js?v=1"></script>
+    <script src="store-badge.js?v=1"></script>
     <script>
       (function () {
         var key = "miniringle-language-choice";
