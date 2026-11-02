@@ -1,47 +1,121 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en" data-lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NovaSolidGames</title>
-    <meta name="description" content="NovaSolidGames의 공식 홈페이지. 우주먼지 키우기 · Grow Space Dust: Idle Clicker 게임 소개와 고객지원, 개인정보처리방침 및 이용약관을 확인하세요." />
+    <meta name="description" content="NovaSolidGames official website. Mobile games, Google Play downloads, and each game's privacy policy and terms." />
     <link rel="canonical" href="https://novasolidgames.github.io/" />
     <style>
-      :root { color-scheme: light dark; }
-      body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans KR", "Noto Sans JP", "Noto Sans TC", sans-serif; background: #0d1020; color: #e8eaf6; line-height: 1.6; }
-      header { background: #2e313f; text-align: center; padding: 28px 16px; }
-      header h1 { margin: 0; font-size: 24px; font-weight: 600; }
-      main { max-width: 720px; margin: 0 auto; padding: 24px 16px 48px; }
-      section { margin-bottom: 28px; }
-      h2 { font-size: 17px; border-bottom: 1px solid #3a3e55; padding-bottom: 6px; }
+      :root { color-scheme: dark; --bg: #0d1020; --card: #171b30; --ink: #e8eaf6; --muted: #9aa0c0; --line: #2c3150; }
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans KR", sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
+      html[data-lang="ko"] body [lang="en"], html[data-lang="en"] body [lang="ko"] { display: none !important; }
       a { color: #8fb4ff; }
-      ul { padding-left: 20px; }
-      footer { text-align: center; color: #8a8fb0; font-size: 13px; padding-bottom: 32px; }
+      .wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+      header { padding: 16px 0 8px; }
+      .lang { display: flex; justify-content: flex-end; gap: 4px; }
+      .lang button { font: inherit; font-size: 13px; padding: 4px 10px; border: 1px solid var(--line); background: transparent; color: var(--muted); border-radius: 999px; cursor: pointer; }
+      .lang button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+      .brand { text-align: center; padding: 24px 0 8px; }
+      .brand img { width: min(520px, 100%); height: auto; }
+      .brand h1 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+      .brand p { color: var(--muted); margin: 8px 0 0; }
+      h2 { font-size: 18px; margin: 40px 0 16px; }
+      .games { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+      .game { background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; }
+      .game > a { color: inherit; text-decoration: none; display: block; }
+      .game > a:hover .name, .game > a:focus-visible .name { text-decoration: underline; }
+      .game .thumb { display: block; width: 100%; height: auto; aspect-ratio: 1024 / 500; object-fit: cover; background: #222; }
+      .game .body { padding: 14px 16px 0; }
+      .game .name { font-weight: 700; font-size: 17px; margin: 0; }
+      .game .desc { color: var(--muted); font-size: 14px; margin: 4px 0 0; }
+      .game .store { padding: 12px 16px 16px; margin-top: auto; }
+      .game .store img { height: 48px; width: auto; display: block; }
+      .game .soon { display: inline-block; font-size: 13px; padding: 6px 12px; border: 1px solid var(--line); border-radius: 8px; color: var(--muted); }
+      .note { color: var(--muted); font-size: 14px; margin-top: 12px; }
+      footer { text-align: center; color: var(--muted); font-size: 13px; padding: 40px 0 32px; }
     </style>
   </head>
   <body>
-    <header>
-      <h1>NovaSolidGames</h1>
-    </header>
-    <main>
-      <section>
-        <h2>회사 소개 · About</h2>
-        <p>NovaSolidGames는 모바일 게임을 개발합니다. 우주먼지에서 시작해 별의 일생을 경험하는 방치형 클리커 게임 ‘우주먼지 키우기’를 만들고 있습니다.</p>
-        <p lang="en">NovaSolidGames develops mobile games, including Grow Space Dust: Idle Clicker, an idle game about growing space dust into stars.</p>
+    <div class="wrap">
+      <header>
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-set-lang="ko" aria-pressed="false">한국어</button>
+          <button type="button" data-set-lang="en" aria-pressed="true">English</button>
+        </div>
+      </header>
+
+      <section class="brand">
+        <h1>NovaSolidGames</h1>
+        <img src="assets/company-logo.png" alt="NovaSolidGames" width="760" height="235" />
+        <p lang="ko">모바일 게임을 만듭니다.</p>
+        <p lang="en">We make mobile games.</p>
       </section>
-      <section>
-        <h2>게임 · Games</h2>
-        <ul>
-          <li><a href="grow-space-dust/">우주먼지 키우기 · Grow Space Dust: Idle Clicker</a></li>
-        </ul>
-        <p><a href="grow-space-dust/privacy.html">개인정보처리방침</a> · <a href="grow-space-dust/privacy_en.html" lang="en">Privacy Policy</a><br />
-          <a href="grow-space-dust/terms.html">이용약관</a> · <a href="grow-space-dust/terms_en.html" lang="en">Terms of Service</a></p>
-      </section>
-      <section>
-        <h2>문의 · Contact</h2>
-        <p><a href="mailto:novasolidgames@gmail.com">novasolidgames@gmail.com</a></p>
-      </section>
-    </main>
-    <footer>© NovaSolidGames</footer>
+
+      <h2><span lang="ko">게임</span><span lang="en">Games</span></h2>
+      <div class="games">
+        <article class="game">
+          <a href="grow-space-dust/">
+            <img class="thumb" src="grow-space-dust/assets/share.jpg" alt="" width="1024" height="500" loading="lazy" />
+            <div class="body">
+              <p class="name"><span lang="ko">우주먼지 키우기</span><span lang="en">Grow Space Dust: Idle Clicker</span></p>
+              <p class="desc"><span lang="ko">우주먼지에서 별이 되기까지, 방치형 클리커</span><span lang="en">An idle clicker about growing space dust into stars</span></p>
+            </div>
+          </a>
+          <div class="store">
+            <a href="https://play.google.com/store/apps/details?id=com.novasolidgames.fromdusttocosmos" rel="noopener">
+              <img lang="ko" src="grow-space-dust/assets/google-play-ko.png" alt="Google Play에서 다운로드" width="646" height="250" />
+              <img lang="en" src="grow-space-dust/assets/google-play-en.png" alt="Get it on Google Play" width="646" height="250" />
+            </a>
+          </div>
+        </article>
+
+        <article class="game">
+          <a href="miniringle/">
+            <img class="thumb" src="miniringle/assets/feature.svg" alt="" width="1024" height="500" loading="lazy" />
+            <div class="body">
+              <p class="name">MiniRingle: 4 Player Offline</p>
+              <p class="desc"><span lang="ko">휴대폰 하나로 4명이 함께하는 미니게임</span><span lang="en">Mini-games for 4 players on one phone</span></p>
+            </div>
+          </a>
+          <div class="store">
+            <span class="soon"><span lang="ko">Google Play 출시 예정</span><span lang="en">Coming soon to Google Play</span></span>
+          </div>
+        </article>
+      </div>
+      <p class="note">
+        <span lang="ko">게임별 개인정보처리방침과 이용약관은 각 게임 페이지에서 볼 수 있습니다.</span>
+        <span lang="en">Each game’s privacy policy and terms are on its game page.</span>
+      </p>
+
+      <h2><span lang="ko">문의</span><span lang="en">Contact</span></h2>
+      <p><a href="mailto:novasolidgames@gmail.com">novasolidgames@gmail.com</a></p>
+
+      <footer>© NovaSolidGames</footer>
+    </div>
+    <script>
+      (function () {
+        var key = "nsg-language-choice";
+        function apply(lang) {
+          document.documentElement.setAttribute("data-lang", lang);
+          document.documentElement.setAttribute("lang", lang);
+          document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+            b.setAttribute("aria-pressed", String(b.getAttribute("data-set-lang") === lang));
+          });
+        }
+        var query = new URLSearchParams(location.search).get("lang");
+        var saved = null;
+        try { saved = localStorage.getItem(key); } catch (e) {}
+        apply(query === "ko" || query === "en" ? query : (saved === "ko" ? "ko" : "en"));
+        document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+          b.addEventListener("click", function () {
+            var lang = b.getAttribute("data-set-lang");
+            apply(lang);
+            try { localStorage.setItem(key, lang); } catch (e) {}
+          });
+        });
+      })();
+    </script>
   </body>
 </html>

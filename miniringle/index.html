@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiniRingle: 4 Player Offline</title>
+    <meta name="description" content="MiniRingle: 4 Player Offline - quick mini-games for up to 4 players on one phone. No internet needed. Coming soon to Google Play." />
+    <link rel="canonical" href="https://novasolidgames.github.io/miniringle/" />
+    <meta property="og:title" content="MiniRingle: 4 Player Offline" />
+    <meta property="og:description" content="Quick mini-games for up to 4 players on one phone. No internet needed." />
+    <style>
+      :root { color-scheme: light; --bg: #f7efe1; --card: #fffaf1; --ink: #3a2f28; --muted: #7a6a5c; --line: #e3d3b8; --accent: #e5484d; }
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans KR", sans-serif; background: var(--bg); color: var(--ink); line-height: 1.65; }
+      html[data-lang="ko"] body [lang="en"], html[data-lang="en"] body [lang="ko"] { display: none !important; }
+      a { color: #2359ad; }
+      .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+      .topbar { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; }
+      .topbar a.home { color: var(--muted); text-decoration: none; font-size: 14px; }
+      .lang { display: flex; gap: 4px; }
+      .lang button { font: inherit; font-size: 13px; padding: 4px 10px; border: 1px solid var(--line); background: transparent; color: var(--muted); border-radius: 999px; cursor: pointer; }
+      .lang button[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+      .hero { text-align: center; padding: 8px 0 32px; }
+      .hero img { width: 100%; max-width: 640px; height: auto; border-radius: 20px; border: 1px solid var(--line); }
+      h1 { font-size: clamp(28px, 6vw, 40px); line-height: 1.2; margin: 24px 0 8px; }
+      .tagline { font-size: 18px; color: var(--muted); margin: 0 0 20px; }
+      .soon { display: inline-block; padding: 10px 18px; border-radius: 12px; background: var(--ink); color: #fff; font-weight: 600; }
+      .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; padding: 8px 0 32px; }
+      .feature { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px; }
+      .feature b { display: block; margin-bottom: 4px; }
+      .feature .dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
+      .feature p { margin: 0; color: var(--muted); font-size: 15px; }
+      footer { border-top: 1px solid var(--line); padding: 20px 0 36px; font-size: 14px; color: var(--muted); }
+      footer nav { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-bottom: 8px; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="topbar">
+        <a class="home" href="../">NovaSolidGames</a>
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-set-lang="ko" aria-pressed="false">한국어</button>
+          <button type="button" data-set-lang="en" aria-pressed="true">English</button>
+        </div>
+      </div>
+
+      <section class="hero">
+        <img src="assets/feature.svg" alt="MiniRingle" width="1024" height="500" />
+        <h1>MiniRingle: 4 Player Offline</h1>
+        <p class="tagline">
+          <span lang="ko">휴대폰 하나로 최대 4명이 함께 즐기는 미니게임 모음</span>
+          <span lang="en">Quick mini-games for up to 4 players on one phone</span>
+        </p>
+        <span class="soon"><span lang="ko">Google Play 출시 예정</span><span lang="en">Coming soon to Google Play</span></span>
+      </section>
+
+      <section class="features">
+        <div class="feature">
+          <b><span class="dot" style="background:#e5484d"></span><span lang="ko">한 기기 4인 플레이</span><span lang="en">4 players, 1 device</span></b>
+          <p lang="ko">휴대폰 하나를 둘러앉아 함께 누르며 겨룹니다.</p>
+          <p lang="en">Gather around one phone and play together.</p>
+        </div>
+        <div class="feature">
+          <b><span class="dot" style="background:#3e7bfa"></span><span lang="ko">인터넷 없이</span><span lang="en">No internet needed</span></b>
+          <p lang="ko">계정도 서버도 없이 어디서나 바로 시작합니다.</p>
+          <p lang="en">No account, no server - start anywhere.</p>
+        </div>
+        <div class="feature">
+          <b><span class="dot" style="background:#30a46c"></span><span lang="ko">매일 바뀌는 오늘의 게임</span><span lang="en">Today’s games</span></b>
+          <p lang="ko">날마다 고른 게임은 무료로 즐길 수 있습니다.</p>
+          <p lang="en">A fresh free selection every day.</p>
+        </div>
+        <div class="feature">
+          <b><span class="dot" style="background:#f5c400"></span><span lang="ko">나만의 꾸미기</span><span lang="en">Dress up your player</span></b>
+          <p lang="ko">색과 모자, 표정, 이펙트로 내 캐릭터를 꾸밉니다.</p>
+          <p lang="en">Pick colors, hats, faces and effects.</p>
+        </div>
+      </section>
+
+      <footer>
+        <nav>
+          <a href="privacy.html" lang="ko">개인정보처리방침</a>
+          <a href="terms.html" lang="ko">이용약관</a>
+          <a href="privacy_en.html" lang="en">Privacy Policy</a>
+          <a href="terms_en.html" lang="en">Terms of Service</a>
+          <a href="mailto:novasolidgames@gmail.com">novasolidgames@gmail.com</a>
+        </nav>
+        © NovaSolidGames
+      </footer>
+    </div>
+    <script>
+      (function () {
+        var key = "miniringle-language-choice";
+        function apply(lang) {
+          document.documentElement.setAttribute("data-lang", lang);
+          document.documentElement.setAttribute("lang", lang);
+          document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+            b.setAttribute("aria-pressed", String(b.getAttribute("data-set-lang") === lang));
+          });
+        }
+        var query = new URLSearchParams(location.search).get("lang");
+        var saved = null;
+        try { saved = localStorage.getItem(key); } catch (e) {}
+        apply(query === "ko" || query === "en" ? query : (saved === "ko" ? "ko" : "en"));
+        document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+          b.addEventListener("click", function () {
+            var lang = b.getAttribute("data-set-lang");
+            apply(lang);
+            try { localStorage.setItem(key, lang); } catch (e) {}
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>

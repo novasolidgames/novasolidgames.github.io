@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 500" width="1024" height="500" role="img" aria-label="MiniRingle">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="75%">
+      <stop offset="0" stop-color="#fbf3e4"/>
+      <stop offset="1" stop-color="#ead9bd"/>
+    </radialGradient>
+  </defs>
+  <rect width="1024" height="500" fill="url(#bg)"/>
+  <circle cx="512" cy="250" r="190" fill="none" stroke="#d8c4a2" stroke-width="10" stroke-dasharray="4 22" stroke-linecap="round"/>
+  <g stroke="#3a2f28" stroke-width="6">
+    <circle cx="372" cy="170" r="58" fill="#e5484d"/>
+    <circle cx="652" cy="170" r="58" fill="#3e7bfa"/>
+    <circle cx="372" cy="330" r="58" fill="#30a46c"/>
+    <circle cx="652" cy="330" r="58" fill="#f5c400"/>
+  </g>
+  <g fill="#3a2f28">
+    <circle cx="356" cy="162" r="7"/><circle cx="388" cy="162" r="7"/>
+    <circle cx="636" cy="162" r="7"/><circle cx="668" cy="162" r="7"/>
+    <circle cx="356" cy="322" r="7"/><circle cx="388" cy="322" r="7"/>
+    <circle cx="636" cy="322" r="7"/><circle cx="668" cy="322" r="7"/>
+  </g>
+  <path d="M342 104 l30 -34 l30 34 z" fill="#3a2f28"/>
+  <path d="M622 108 h60 v-10 a30 22 0 0 0 -60 0 z" fill="#3a2f28"/>
+  <text x="512" y="262" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="44" font-weight="800" fill="#3a2f28">4P</text>
+</svg>
