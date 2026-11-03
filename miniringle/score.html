@@ -26,10 +26,9 @@
       .stage::after { bottom: 0; }
       .sign { position: relative; display: inline-block; width: min(100%, 420px); margin-top: 18px; animation: swing 3.2s ease-in-out infinite; transform-origin: 50% 0; }
       .sign svg { display: block; width: 100%; height: auto; }
-      .sign .text { position: absolute; left: 0; right: 0; top: 42%; bottom: 6%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+      .sign .text { position: absolute; left: 0; right: 0; top: 30%; bottom: 8%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
       .game { font-size: clamp(15px, 4vw, 19px); color: var(--muted); font-weight: 600; }
       .score { font-size: clamp(40px, 13vw, 68px); font-weight: 800; color: var(--navy); line-height: 1.05; letter-spacing: 0.01em; word-break: break-all; }
-      .unit { font-size: 15px; color: var(--muted); }
       .ringle { width: 72px; height: 72px; margin: 18px auto 0; display: block; animation: bob 1.6s ease-in-out infinite; }
       @keyframes swing { 0%, 100% { transform: rotate(-1.6deg); } 50% { transform: rotate(1.6deg); } }
       @keyframes bob { 0%, 100% { transform: translateY(-6px); } 50% { transform: translateY(6px); } }
@@ -68,7 +67,6 @@
           <div class="text">
             <div class="game" data-game>MiniRingle</div>
             <div class="score" data-score>0</div>
-            <div class="unit"><span lang="ko">점</span><span lang="en">points</span></div>
           </div>
         </div>
         <p class="invalid" data-invalid hidden>
@@ -121,7 +119,7 @@
           document.querySelector("[data-score]").textContent = score;
           document.querySelector("[data-sign]").hidden = !valid;
           document.querySelector("[data-invalid]").hidden = valid;
-          document.title = valid ? name + " " + score + (lang === "ko" ? "점 - MiniRingle" : " - MiniRingle") : "MiniRingle Score";
+          document.title = valid ? name + " " + score + " - MiniRingle" : "MiniRingle Score";
         }
         function apply(lang) {
           document.documentElement.setAttribute("data-lang", lang);
