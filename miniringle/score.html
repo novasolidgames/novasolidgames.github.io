@@ -31,6 +31,12 @@
       .stage[data-theme="jump"]::before, .stage[data-theme="jump"]::after { display: none; }
       .stage[data-theme="jump"] .scene-jump, .stage[data-theme="jump"] .perch { display: block; }
       .stage[data-theme="jump"] .ringle { animation: hop 0.9s infinite; }
+      /* 링글 순발력: 탁자 위 휴대폰의 네 칸(플레이어 색) + 가운데 초록 신호, 링글 둘레로 신호 고리가 퍼진다 */
+      .stage[data-theme="reflex"] { background: #f7efe1; }
+      .stage[data-theme="reflex"]::before, .stage[data-theme="reflex"]::after { display: none; }
+      .stage[data-theme="reflex"] .scene-reflex { display: block; }
+      .stage[data-theme="reflex"] .ringle { animation: none; border-radius: 50%; box-shadow: 0 0 0 0 rgba(48, 164, 108, 0.7); animation: go 1.4s ease-out infinite; }
+      @keyframes go { 0% { box-shadow: 0 0 0 0 rgba(48, 164, 108, 0.75); } 100% { box-shadow: 0 0 0 34px rgba(48, 164, 108, 0); } }
       @keyframes hop {
         0% { transform: translateY(0) scale(1.12, 0.88); animation-timing-function: ease-out; }
         12% { transform: translateY(-4px) scale(1, 1); animation-timing-function: ease-out; }
@@ -45,7 +51,7 @@
       .ringle { width: 72px; height: 72px; margin: 18px auto 0; display: block; animation: bob 1.6s ease-in-out infinite; }
       @keyframes swing { 0%, 100% { transform: rotate(-1.6deg); } 50% { transform: rotate(1.6deg); } }
       @keyframes bob { 0%, 100% { transform: translateY(-6px); } 50% { transform: translateY(6px); } }
-      @media (prefers-reduced-motion: reduce) { .sign, .ringle, .stage[data-theme="jump"] .ringle { animation: none; } }
+      @media (prefers-reduced-motion: reduce) { .sign, .ringle, .stage[data-theme="jump"] .ringle, .stage[data-theme="reflex"] .ringle { animation: none; } }
       h1 { font-size: clamp(22px, 5.5vw, 30px); line-height: 1.3; margin: 0 0 8px; text-align: center; }
       .lead { text-align: center; color: var(--muted); margin: 0 0 20px; }
       .store { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-bottom: 20px; }
@@ -83,6 +89,18 @@
           </g>
           <polygon points="560,190 567,205 583,207 571,218 574,234 560,226 546,234 549,218 537,207 553,205" fill="#ffd34a" stroke="#c8902a" stroke-width="3" stroke-linejoin="round" />
           <polygon points="90,190 95,201 107,202 98,210 100,222 90,216 80,222 82,210 73,202 85,201" fill="#5bd98a" stroke="#2f8f57" stroke-width="3" stroke-linejoin="round" />
+        </svg>
+        <svg class="scene scene-reflex" viewBox="0 0 640 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect x="6" y="6" width="310" height="200" rx="22" fill="#f8dca6" />
+          <rect x="324" y="6" width="310" height="200" rx="22" fill="#aedabd" />
+          <rect x="6" y="214" width="310" height="200" rx="22" fill="#f3b4b0" />
+          <rect x="324" y="214" width="310" height="200" rx="22" fill="#a9cbee" />
+          <g font-family="system-ui, sans-serif" font-weight="800" font-size="30" text-anchor="middle" stroke="#3a2f28" stroke-opacity="0.5" stroke-width="1.5">
+            <text x="80" y="385" fill="#ffffff">0.198s</text>
+            <text x="560" y="385" fill="#ffffff">0.243s</text>
+            <text x="80" y="50" fill="#30a46c" transform="rotate(180 80 40)">Tap!</text>
+            <text x="560" y="50" fill="#e5484d" transform="rotate(180 560 40)">Too soon!</text>
+          </g>
         </svg>
         <div class="sign" data-sign>
           <svg viewBox="0 0 420 230" aria-hidden="true">
@@ -134,11 +152,12 @@
     <script>
       // 게임이 복사한 자랑 링크(?g=게임 Id&s=점수&lang=ko|en)를 보여 준다. 서버가 없어 점수는 링크에 적힌 그대로다(자랑용).
       // 값은 글자로만 넣는다(textContent) - 링크를 고쳐도 페이지에 코드가 끼어들지 못한다. 개인정보는 링크에 없다.
-      // 무대(theme)는 게임마다: flight = 위아래 벽 사이 통로(기본), jump = 하늘 · 구름 발판.
+      // 무대(theme)는 게임마다: flight = 위아래 벽 사이 통로(기본), jump = 하늘 · 구름 발판, reflex = 네 칸 + 초록 신호.
       (function () {
         var games = {
           ringle_flight: { ko: "링글 플라이트", en: "Ringle Flight", theme: "flight" },
-          ringle_jump: { ko: "링글 점프", en: "Ringle Jump", theme: "jump" }
+          ringle_jump: { ko: "링글 점프", en: "Ringle Jump", theme: "jump" },
+          ringle_reflex: { ko: "링글 순발력", en: "Ringle Reflex", theme: "reflex" }
         };
         var params = new URLSearchParams(location.search);
         var key = "miniringle-language-choice";
