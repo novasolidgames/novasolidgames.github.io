@@ -33,6 +33,15 @@
       .feature b { display: block; margin-bottom: 4px; }
       .feature .dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
       .feature p { margin: 0; color: var(--muted); font-size: 15px; }
+      .games h2 { font-size: 24px; margin: 0 0 12px; }
+      .game-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; padding-bottom: 8px; }
+      .game-card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+      .game-card img { display: block; width: 100%; height: auto; aspect-ratio: 600 / 540; object-fit: cover; background: #e8d9bf; }
+      .game-card .info { padding: 12px 14px 16px; }
+      .game-card b { display: block; font-size: 18px; }
+      .game-card .tags { display: block; font-size: 13px; color: var(--muted); margin: 2px 0 6px; }
+      .game-card p { margin: 0; font-size: 15px; color: var(--muted); }
+      .games-note { color: var(--muted); font-size: 15px; margin: 4px 0 28px; }
       footer { border-top: 1px solid var(--line); padding: 20px 0 36px; font-size: 14px; color: var(--muted); }
       footer nav { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-bottom: 8px; }
     </style>
@@ -61,6 +70,22 @@
           </a>
           <p class="store-note" data-store-note hidden><span lang="ko">곧 출시돼요! 출시되면 이 버튼으로 받을 수 있어요.</span><span lang="en">Coming soon! You can get it here once it launches.</span></p>
         </div>
+      </section>
+
+      <section class="games">
+        <h2><span lang="ko">미니게임</span><span lang="en">Mini-games</span></h2>
+        <div class="game-list">
+          <article class="game-card">
+            <img src="assets/games/ringle_flight.png" alt="Ringle Flight" width="600" height="540" loading="lazy" />
+            <div class="info">
+              <b><span lang="ko">링글 플라이트</span><span lang="en">Ringle Flight</span></b>
+              <span class="tags"><span lang="ko">가로 화면 · 1~4명</span><span lang="en">Landscape · 1-4 players</span></span>
+              <p lang="ko">화면을 눌러 날아오르고 구불구불한 길에서 벽과 세모 적을 피해요. 작은 원을 이어 먹어 콤보를 쌓고 별로 질주해요.</p>
+              <p lang="en">Tap to fly up and dodge walls and triangles on a winding path. Chain small circles into combos and dash with stars.</p>
+            </div>
+          </article>
+        </div>
+        <p class="games-note"><span lang="ko">더 많은 미니게임이 준비 중이에요.</span><span lang="en">More mini-games are on the way.</span></p>
       </section>
 
       <section class="features">
