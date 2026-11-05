@@ -58,7 +58,26 @@
         50% { transform: translate(0, -30px); animation-timing-function: ease-in; }
         100% { transform: translate(24px, 0) scale(1.1, 0.9); }
       }
-      @media (prefers-reduced-motion: reduce) { .sign, .ringle, .stage[data-theme="jump"] .ringle, .stage[data-theme="skip"] .ringle { animation: none; } }
+      /* 링글 탑 쌓기: 하늘 + 받침 땅, 양옆에 링글을 쌓은 탑 · 5층마다 높이 표시 · 허공 별, 링글이 위에서 똑 떨어져 얹힌다 */
+      .stage[data-theme="stack"] { background: linear-gradient(#5fb8ff, #d6f1ff); }
+      .stage[data-theme="stack"]::before, .stage[data-theme="stack"]::after { display: none; }
+      .stage[data-theme="stack"] .scene-stack { display: block; }
+      .stage[data-theme="stack"] .ringle { animation: drop 1.4s infinite; }
+      @keyframes drop {
+        0%, 20% { transform: translateY(-60px); animation-timing-function: ease-in; }
+        40% { transform: translateY(0) scale(1.14, 0.86); animation-timing-function: ease-out; }
+        52% { transform: translateY(0) scale(1, 1); }
+        100% { transform: translateY(0); }
+      }
+      @media (prefers-reduced-motion: reduce) { .sign, .ringle, .stage[data-theme="jump"] .ringle, .stage[data-theme="skip"] .ringle, .stage[data-theme="stack"] .ringle { animation: none; } }
+      /* 여럿이 한 판(p=): 게임의 시상대 그대로 - 1등 가운데 · 2등 왼쪽 · 3등 오른쪽 · 4등 바닥, 단 위에 팀 링글(플레이어 번호 색 고정) */
+      .stage.has-podium .ringle, .stage.has-podium .perch { display: none !important; }
+      .podium { display: flex; justify-content: center; align-items: flex-end; gap: 10px; margin: 20px auto 0; max-width: 520px; }
+      .podium .col { flex: 1 1 0; max-width: 130px; display: flex; flex-direction: column; align-items: center; }
+      .podium .crowd { display: flex; flex-wrap: wrap; justify-content: center; margin-bottom: 4px; }
+      .podium .crowd svg { width: 36px; height: 36px; margin: 0 -2px; }
+      .podium .val { font-weight: 800; color: var(--navy); font-size: clamp(14px, 4vw, 18px); margin-bottom: 4px; word-break: break-all; }
+      .podium .block { width: 100%; border-radius: 12px 12px 0 0; color: #fff; font-weight: 800; font-size: 28px; display: flex; justify-content: center; padding-top: 6px; text-shadow: 0 2px 0 rgba(0,0,0,0.2); }
       h1 { font-size: clamp(22px, 5.5vw, 30px); line-height: 1.3; margin: 0 0 8px; text-align: center; }
       .lead { text-align: center; color: var(--muted); margin: 0 0 20px; }
       .store { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-bottom: 20px; }
@@ -109,6 +128,23 @@
           <polygon points="80,170 85,181 97,182 88,190 90,202 80,196 70,202 72,190 63,182 75,181" fill="#5aa9ff" stroke="#2d6fc0" stroke-width="3" stroke-linejoin="round" />
           <rect x="586" y="250" width="8" height="84" fill="#7a5236" />
         </svg>
+        <svg class="scene scene-stack" viewBox="0 0 640 420" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+          <g stroke="#ffffff" stroke-opacity="0.35" stroke-width="3"><line x1="0" y1="232" x2="640" y2="232" /><line x1="0" y1="72" x2="640" y2="72" /></g>
+          <g font-family="system-ui, sans-serif" font-weight="800" font-size="20" fill="#ffffff" text-anchor="middle">
+            <rect x="8" y="218" width="40" height="28" rx="10" fill="#1f1a38" fill-opacity="0.55" /><text x="28" y="239">5</text>
+            <rect x="8" y="58" width="40" height="28" rx="10" fill="#1f1a38" fill-opacity="0.55" /><text x="28" y="79">10</text>
+          </g>
+          <rect x="0" y="392" width="640" height="28" fill="#8a6a50" />
+          <rect x="0" y="384" width="640" height="12" rx="6" fill="#7cc36a" />
+          <g stroke-width="4">
+            <circle cx="92" cy="358" r="26" fill="#3b8bd8" stroke="#2a6bb0" /><circle cx="94" cy="310" r="26" fill="#4cb36a" stroke="#2f8f57" />
+            <circle cx="98" cy="262" r="26" fill="#3b8bd8" stroke="#2a6bb0" /><circle cx="104" cy="214" r="26" fill="#4cb36a" stroke="#2f8f57" />
+            <circle cx="548" cy="358" r="26" fill="#f0b23c" stroke="#c48a1e" /><circle cx="546" cy="310" r="26" fill="#f0b23c" stroke="#c48a1e" />
+            <circle cx="548" cy="262" r="26" fill="#f0b23c" stroke="#c48a1e" /><circle cx="552" cy="214" r="26" fill="#f0b23c" stroke="#c48a1e" /><circle cx="550" cy="166" r="26" fill="#f0b23c" stroke="#c48a1e" />
+          </g>
+          <polygon points="470,100 477,115 493,117 481,128 484,144 470,136 456,144 459,128 447,117 463,115" fill="#ffd34a" stroke="#c8902a" stroke-width="3" stroke-linejoin="round" />
+          <polygon points="180,140 185,151 197,152 188,160 190,172 180,166 170,172 172,160 163,152 175,151" fill="#5bd98a" stroke="#2f8f57" stroke-width="3" stroke-linejoin="round" />
+        </svg>
         <div class="sign" data-sign>
           <svg viewBox="0 0 420 230" aria-hidden="true">
             <path d="M80 0 L80 54 M340 0 L340 54" stroke="#6b5a4a" stroke-width="6" stroke-linecap="round" />
@@ -127,6 +163,7 @@
           <span lang="ko">점수를 읽을 수 없는 링크예요.</span>
           <span lang="en">This link doesn't contain a valid score.</span>
         </p>
+        <div class="podium" data-podium hidden></div>
         <svg class="ringle" viewBox="0 0 100 100" aria-hidden="true">
           <circle cx="50" cy="54" r="42" fill="#c93a40" />
           <circle cx="50" cy="50" r="42" fill="#e5484d" stroke="#b5303a" stroke-width="5" />
@@ -157,15 +194,16 @@
     <script src="site-config.js?v=1"></script>
     <script src="store-badge.js?v=1"></script>
     <script>
-      // 게임이 복사한 자랑 링크(?g=게임 Id&s=점수&lang=ko|en)를 보여 준다. 서버가 없어 점수는 링크에 적힌 그대로다(자랑용).
+      // 게임이 복사한 자랑 링크(?g=게임 Id&s=점수&lang=ko|en, 여럿이면 &p=시상대 · 높이 게임은 &u=h)를 보여 준다. 서버가 없어 점수는 링크에 적힌 그대로다(자랑용).
       // 값은 글자로만 넣는다(textContent) - 링크를 고쳐도 페이지에 코드가 끼어들지 못한다. 개인정보는 링크에 없다.
-      // 무대(theme)는 게임마다: flight = 위아래 벽 사이 통로(기본), jump = 하늘 · 구름 발판, skip = 하늘 · 아래쪽 물, reflex = 초록 신호.
+      // 무대(theme)는 게임마다: flight = 위아래 벽 사이 통로(기본), jump = 하늘 · 구름 발판, skip = 하늘 · 아래쪽 물, reflex = 초록 신호, stack = 하늘 · 받침 땅 · 링글 탑.
       (function () {
         var games = {
           ringle_flight: { ko: "링글 플라이트", en: "Ringle Flight", theme: "flight" },
           ringle_jump: { ko: "링글 점프", en: "Ringle Jump", theme: "jump" },
           ringle_reflex: { ko: "링글 순발력", en: "Ringle Reflex", theme: "reflex" },
-          ringle_skip: { ko: "링글 물수제비", en: "Ringle Skip", theme: "skip" }
+          ringle_skip: { ko: "링글 물수제비", en: "Ringle Skip", theme: "skip" },
+          ringle_stack: { ko: "링글 탑 쌓기", en: "Ringle Stack", theme: "stack" }
         };
         var params = new URLSearchParams(location.search);
         var key = "miniringle-language-choice";
@@ -173,15 +211,64 @@
         var raw = (params.get("s") || "").trim();
         var valid = /^\d{1,12}$/.test(raw);
         document.querySelector("[data-stage]").setAttribute("data-theme", game ? game.theme : "flight");
+        var height = params.get("u") === "h";//높이로 겨루는 게임(링글 탑 쌓기 팀전)
+        // 시상대(p=점수-번호.번호_점수-번호): 팀 최대 4, 번호는 1~4만. 형식이 어긋난 팀은 뺀다.
+        var teams = [];
+        (params.get("p") || "").split("_").slice(0, 4).forEach(function (part) {
+          var m = /^(\d{1,12})-([1-4](?:\.[1-4]){0,3})?$/.exec(part);
+          if (m) teams.push({ score: Number(m[1]), players: m[2] ? m[2].split(".").map(Number) : [] });
+        });
+        var colors = { 1: ["#e5484d", "#b5303a"], 2: ["#3b8bd8", "#2a6bb0"], 3: ["#4cb36a", "#2f8f57"], 4: ["#f0b23c", "#c48a1e"] };
+        function unit(value, lang) {
+          var text = value.toLocaleString(lang === "ko" ? "ko-KR" : "en-US");
+          return height ? (lang === "ko" ? text + "층" : text + (value === 1 ? " floor" : " floors")) : text;
+        }
+        function ringle(player) {
+          var ns = "http://www.w3.org/2000/svg", svg = document.createElementNS(ns, "svg"), c = colors[player];
+          svg.setAttribute("viewBox", "0 0 100 100");
+          var body = document.createElementNS(ns, "circle");
+          body.setAttribute("cx", "50"); body.setAttribute("cy", "50"); body.setAttribute("r", "40");
+          body.setAttribute("fill", c[0]); body.setAttribute("stroke", c[1]); body.setAttribute("stroke-width", "6");
+          svg.appendChild(body);
+          [37, 63].forEach(function (x) { var eye = document.createElementNS(ns, "circle"); eye.setAttribute("cx", String(x)); eye.setAttribute("cy", "45"); eye.setAttribute("r", "6"); eye.setAttribute("fill", "#3a1414"); svg.appendChild(eye); });
+          return svg;
+        }
+        function drawPodium(lang) {
+          var box = document.querySelector("[data-podium]");
+          box.textContent = "";
+          box.hidden = teams.length === 0;
+          document.querySelector("[data-stage]").classList.toggle("has-podium", teams.length > 0);
+          if (teams.length === 0) return;
+          var ranked = teams.map(function (t) {
+            var rank = 1;
+            teams.forEach(function (o) { if (o.score > t.score) rank++; });
+            return { team: t, rank: rank };
+          }).sort(function (a, b) { return a.rank - b.rank; });
+          var order = ranked.length >= 2 ? [ranked[1], ranked[0]].concat(ranked.slice(2)) : ranked;//2등 · 1등 · 3등 · 4등
+          var tall = { 1: 120, 2: 88, 3: 64 }, fill = { 1: "#f2c94c", 2: "#b8c2cc", 3: "#d39b62" };
+          order.forEach(function (r) {
+            var col = document.createElement("div"); col.className = "col";
+            var crowd = document.createElement("div"); crowd.className = "crowd";
+            r.team.players.forEach(function (p) { crowd.appendChild(ringle(p)); });
+            var val = document.createElement("div"); val.className = "val"; val.textContent = unit(r.team.score, lang);
+            var block = document.createElement("div"); block.className = "block";
+            block.style.height = (tall[r.rank] || 36) + "px";
+            block.style.background = fill[r.rank] || "#9aa3ad";
+            block.textContent = String(r.rank);
+            col.appendChild(crowd); col.appendChild(val); col.appendChild(block);
+            box.appendChild(col);
+          });
+        }
 
         function render(lang) {
           var name = game ? game[lang] : "MiniRingle";
           document.querySelector("[data-game]").textContent = name;
-          var score = valid ? Number(raw).toLocaleString(lang === "ko" ? "ko-KR" : "en-US") : "";
+          var score = valid ? unit(Number(raw), lang) : "";
           document.querySelector("[data-score]").textContent = score;
           document.querySelector("[data-sign]").hidden = !valid;
           document.querySelector("[data-invalid]").hidden = valid;
           document.title = valid ? name + " " + score + " - MiniRingle" : "MiniRingle Score";
+          drawPodium(lang);
         }
         function apply(lang) {
           document.documentElement.setAttribute("data-lang", lang);
