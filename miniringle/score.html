@@ -72,6 +72,9 @@
       }
       .stage[data-theme="match"].has-podium { padding-bottom: 28px; background: #fff8ec; }
       .stage[data-theme="match"]::before, .stage[data-theme="match"]::after { display: none; }
+      /* 링글 벽타기: 하늘 + 가운데 옅은 통로와 좌우 갈색 벽 - 링글이 벽 사이를 오른다 */
+      .stage[data-theme="climb"] { background: linear-gradient(90deg, #bfe3ff 0 14%, #8a6a50 14% 18%, #eaf5ff 18% 82%, #8a6a50 82% 86%, #bfe3ff 86%); }
+      .stage[data-theme="climb"]::before, .stage[data-theme="climb"]::after { display: none; }
       /* 링글 물수제비: 하늘 + 아래쪽 물(물결 · 세모 · 물보라 고리), 링글이 수면을 낮게 스치듯 튄다 */
       .stage[data-theme="skip"] { background: linear-gradient(#bfe8fa, #e3f5fd); }
       .stage[data-theme="skip"]::before, .stage[data-theme="skip"]::after { display: none; }
@@ -220,7 +223,7 @@
     <script>
       // 게임이 복사한 자랑 링크(?g=게임 Id&s=점수&lang=ko|en, 여럿이면 &p=시상대 · 높이 게임은 &u=h)를 보여 준다. 서버가 없어 점수는 링크에 적힌 그대로다(자랑용).
       // 값은 글자로만 넣는다(textContent) - 링크를 고쳐도 페이지에 코드가 끼어들지 못한다. 개인정보는 링크에 없다.
-      // 무대(theme)는 게임마다: flight = 위아래 벽 사이 통로(기본), jump = 하늘 · 구름 발판, skip = 하늘 · 아래쪽 물, reflex = 초록 신호, stack = 하늘 · 받침 땅 · 링글 탑, memory = 링글 넷(하나만 색이 찬다), match = 도형 넷.
+      // 무대(theme)는 게임마다: flight = 위아래 벽 사이 통로(기본), jump = 하늘 · 구름 발판, skip = 하늘 · 아래쪽 물, reflex = 초록 신호, stack = 하늘 · 받침 땅 · 링글 탑, memory = 링글 넷(하나만 색이 찬다), match = 도형 넷, climb = 좌우 벽 사이 통로.
       (function () {
         var games = {
           ringle_flight: { ko: "링글 플라이트", en: "Ringle Flight", theme: "flight" },
@@ -229,7 +232,8 @@
           ringle_skip: { ko: "링글 물수제비", en: "Ringle Skip", theme: "skip" },
           ringle_stack: { ko: "링글 탑 쌓기", en: "Ringle Stack", theme: "stack" },
           ringle_memory: { ko: "링글 기억력", en: "Ringle Memory", theme: "memory" },
-          ringle_match: { ko: "링글 짝 맞추기", en: "Ringle Match", theme: "match" }
+          ringle_match: { ko: "링글 짝 맞추기", en: "Ringle Match", theme: "match" },
+          ringle_climb: { ko: "링글 벽타기", en: "Ringle Climb", theme: "climb" }
         };
         var params = new URLSearchParams(location.search);
         var key = "miniringle-language-choice";
