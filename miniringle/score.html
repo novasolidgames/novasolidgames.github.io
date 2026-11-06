@@ -60,6 +60,18 @@
       }
       .stage[data-theme="memory"].has-podium { padding-bottom: 28px; background: #fff8ec; }
       .stage[data-theme="memory"]::before, .stage[data-theme="memory"]::after { display: none; }
+      /* 링글 짝 맞추기: 옅은 판 + 맨 아래 도형 넷(원 · 네모가 번갈아). 시상대가 있으면 판만 */
+      .stage[data-theme="match"] {
+        padding-bottom: 76px;
+        background:
+          radial-gradient(circle at calc(50% - 99px) calc(100% - 38px), #e5484d 0 20px, transparent 21px),
+          linear-gradient(#3e8ef7, #3e8ef7) calc(50% - 33px) calc(100% - 19px) / 38px 38px no-repeat,
+          radial-gradient(circle at calc(50% + 33px) calc(100% - 38px), #30a46c 0 20px, transparent 21px),
+          linear-gradient(#f5b400, #f5b400) calc(50% + 99px) calc(100% - 19px) / 38px 38px no-repeat,
+          #fff8ec;
+      }
+      .stage[data-theme="match"].has-podium { padding-bottom: 28px; background: #fff8ec; }
+      .stage[data-theme="match"]::before, .stage[data-theme="match"]::after { display: none; }
       /* 링글 물수제비: 하늘 + 아래쪽 물(물결 · 세모 · 물보라 고리), 링글이 수면을 낮게 스치듯 튄다 */
       .stage[data-theme="skip"] { background: linear-gradient(#bfe8fa, #e3f5fd); }
       .stage[data-theme="skip"]::before, .stage[data-theme="skip"]::after { display: none; }
@@ -208,7 +220,7 @@
     <script>
       // 게임이 복사한 자랑 링크(?g=게임 Id&s=점수&lang=ko|en, 여럿이면 &p=시상대 · 높이 게임은 &u=h)를 보여 준다. 서버가 없어 점수는 링크에 적힌 그대로다(자랑용).
       // 값은 글자로만 넣는다(textContent) - 링크를 고쳐도 페이지에 코드가 끼어들지 못한다. 개인정보는 링크에 없다.
-      // 무대(theme)는 게임마다: flight = 위아래 벽 사이 통로(기본), jump = 하늘 · 구름 발판, skip = 하늘 · 아래쪽 물, reflex = 초록 신호, stack = 하늘 · 받침 땅 · 링글 탑, memory = 링글 넷(하나만 색이 찬다).
+      // 무대(theme)는 게임마다: flight = 위아래 벽 사이 통로(기본), jump = 하늘 · 구름 발판, skip = 하늘 · 아래쪽 물, reflex = 초록 신호, stack = 하늘 · 받침 땅 · 링글 탑, memory = 링글 넷(하나만 색이 찬다), match = 도형 넷.
       (function () {
         var games = {
           ringle_flight: { ko: "링글 플라이트", en: "Ringle Flight", theme: "flight" },
@@ -216,7 +228,8 @@
           ringle_reflex: { ko: "링글 순발력", en: "Ringle Reflex", theme: "reflex" },
           ringle_skip: { ko: "링글 물수제비", en: "Ringle Skip", theme: "skip" },
           ringle_stack: { ko: "링글 탑 쌓기", en: "Ringle Stack", theme: "stack" },
-          ringle_memory: { ko: "링글 기억력", en: "Ringle Memory", theme: "memory" }
+          ringle_memory: { ko: "링글 기억력", en: "Ringle Memory", theme: "memory" },
+          ringle_match: { ko: "링글 짝 맞추기", en: "Ringle Match", theme: "match" }
         };
         var params = new URLSearchParams(location.search);
         var key = "miniringle-language-choice";
