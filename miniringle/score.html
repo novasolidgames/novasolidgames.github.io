@@ -84,6 +84,9 @@
       .stage[data-theme="shoot"]::before, .stage[data-theme="shoot"]::after { display: none; }
       .stage[data-theme="orbit"] { background: radial-gradient(circle at 50% 50%, #ffd45c 0 34px, #e8ecff 34px 70px, #9aa5d8 70px 73px, #e8ecff 73px 112px, #9aa5d8 112px 115px, #e8ecff 115px); }
       .stage[data-theme="orbit"]::before, .stage[data-theme="orbit"]::after { display: none; }
+      /* 링글 줄넘기: 하늘 + 아래쪽 땅, 링글 위로 줄이 둥글게 돈다 */
+      .stage[data-theme="rope"] { background: radial-gradient(ellipse 46% 40% at 50% 64%, transparent 0 96%, #ffffff 96% 100%, transparent 100%), linear-gradient(#8fd3ff 0 74%, #7bc86c 74%); }
+      .stage[data-theme="rope"]::before, .stage[data-theme="rope"]::after { display: none; }
       /* 링글 물수제비: 하늘 + 아래쪽 물(물결 · 세모 · 물보라 고리), 링글이 수면을 낮게 스치듯 튄다 */
       .stage[data-theme="skip"] { background: linear-gradient(#bfe8fa, #e3f5fd); }
       .stage[data-theme="skip"]::before, .stage[data-theme="skip"]::after { display: none; }
@@ -232,7 +235,7 @@
     <script>
       // 게임이 복사한 자랑 링크(?g=게임 Id&s=점수&lang=ko|en, 여럿이면 &p=시상대 · 높이 게임은 &u=h)를 보여 준다. 서버가 없어 점수는 링크에 적힌 그대로다(자랑용).
       // 값은 글자로만 넣는다(textContent) - 링크를 고쳐도 페이지에 코드가 끼어들지 못한다. 개인정보는 링크에 없다.
-      // 무대(theme)는 게임마다: flight = 위아래 벽 사이 통로(기본), jump = 하늘 · 구름 발판, skip = 하늘 · 아래쪽 물, reflex = 초록 신호, stack = 하늘 · 받침 땅 · 링글 탑, memory = 링글 넷(하나만 색이 찬다), match = 도형 넷, climb = 좌우 벽 사이 통로, descend = 바위 사이 통로와 천장, shoot = 위가 짙은 하늘, orbit = 가운데 별과 궤도 두 줄.
+      // 무대(theme)는 게임마다: flight = 위아래 벽 사이 통로(기본), jump = 하늘 · 구름 발판, skip = 하늘 · 아래쪽 물, reflex = 초록 신호, stack = 하늘 · 받침 땅 · 링글 탑, memory = 링글 넷(하나만 색이 찬다), match = 도형 넷, climb = 좌우 벽 사이 통로, descend = 바위 사이 통로와 천장, shoot = 위가 짙은 하늘, orbit = 가운데 별과 궤도 두 줄, rope = 하늘 · 아래쪽 땅과 둥글게 도는 줄.
       (function () {
         var games = {
           ringle_flight: { ko: "링글 플라이트", en: "Ringle Flight", theme: "flight" },
@@ -245,7 +248,8 @@
           ringle_climb: { ko: "링글 벽타기", en: "Ringle Climb", theme: "climb" },
           ringle_descend: { ko: "링글 내려가기", en: "Ringle Descent", theme: "descend" },
           ringle_shoot: { ko: "링글 슈팅", en: "Ringle Shooter", theme: "shoot" },
-          ringle_orbit: { ko: "링글 궤도", en: "Ringle Orbit", theme: "orbit" }
+          ringle_orbit: { ko: "링글 궤도", en: "Ringle Orbit", theme: "orbit" },
+          ringle_rope: { ko: "링글 줄넘기", en: "Ringle Rope", theme: "rope" }
         };
         var params = new URLSearchParams(location.search);
         var key = "miniringle-language-choice";
