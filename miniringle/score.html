@@ -93,6 +93,8 @@
       .stage[data-theme="disc"]::before, .stage[data-theme="disc"]::after { display: none; }
       .stage[data-theme="stairs"] { background: linear-gradient(#86db5e 0 34%, #b9825a 34%) 50% 22% / 14% 24% no-repeat, linear-gradient(#86db5e 0 34%, #b9825a 34%) 38% 50% / 14% 24% no-repeat, linear-gradient(#86db5e 0 34%, #b9825a 34%) 62% 50% / 14% 24% no-repeat, linear-gradient(#86db5e 0 34%, #b9825a 34%) 26% 78% / 14% 24% no-repeat, linear-gradient(#86db5e 0 34%, #b9825a 34%) 50% 78% / 14% 24% no-repeat, linear-gradient(#86db5e 0 34%, #b9825a 34%) 74% 78% / 14% 24% no-repeat, #9edbff; }
       .stage[data-theme="stairs"]::before, .stage[data-theme="stairs"]::after { display: none; }
+      .stage[data-theme="ski"] { background: linear-gradient(#5b5470, #5b5470) 30% 30% / 1.2% 16% no-repeat, linear-gradient(#5b5470, #5b5470) 62% 30% / 1.2% 16% no-repeat, linear-gradient(#5b5470, #5b5470) 40% 72% / 1.2% 16% no-repeat, linear-gradient(#5b5470, #5b5470) 72% 72% / 1.2% 16% no-repeat, linear-gradient(90deg, #ff8a3d, #ff8a3d) 4% 0 / 1% 100% no-repeat, linear-gradient(90deg, #ff8a3d, #ff8a3d) 96% 0 / 1% 100% no-repeat, #f4faff; }
+      .stage[data-theme="ski"]::before, .stage[data-theme="ski"]::after { display: none; }
       /* 링글 물수제비: 하늘 + 아래쪽 물(물결 · 세모 · 물보라 고리), 링글이 수면을 낮게 스치듯 튄다 */
       .stage[data-theme="skip"] { background: linear-gradient(#bfe8fa, #e3f5fd); }
       .stage[data-theme="skip"]::before, .stage[data-theme="skip"]::after { display: none; }
@@ -241,7 +243,7 @@
     <script>
       // 게임이 복사한 자랑 링크(?g=게임 Id&s=점수&lang=ko|en, 여럿이면 &p=시상대 · 높이 게임은 &u=h)를 보여 준다. 서버가 없어 점수는 링크에 적힌 그대로다(자랑용).
       // 값은 글자로만 넣는다(textContent) - 링크를 고쳐도 페이지에 코드가 끼어들지 못한다. 개인정보는 링크에 없다.
-      // 무대(theme)는 게임마다: flight = 위아래 벽 사이 통로(기본), jump = 하늘 · 구름 발판, skip = 하늘 · 아래쪽 물, reflex = 초록 신호, stack = 하늘 · 받침 땅 · 링글 탑, memory = 링글 넷(하나만 색이 찬다), match = 도형 넷, climb = 좌우 벽 사이 통로, descend = 바위 사이 통로와 천장, shoot = 위가 짙은 하늘, orbit = 가운데 별과 궤도 두 줄, rope = 하늘 · 아래쪽 땅과 둥글게 도는 줄, swing = 끊긴 천장 · 비스듬한 줄 · 아래쪽 바닥, disc = 하늘에 떠 있는 원반 셋(가장자리 띠), stairs = 풀밭 블록 피라미드(1 · 2 · 3개).
+      // 무대(theme)는 게임마다: flight = 위아래 벽 사이 통로(기본), jump = 하늘 · 구름 발판, skip = 하늘 · 아래쪽 물, reflex = 초록 신호, stack = 하늘 · 받침 땅 · 링글 탑, memory = 링글 넷(하나만 색이 찬다), match = 도형 넷, climb = 좌우 벽 사이 통로, descend = 바위 사이 통로와 천장, shoot = 위가 짙은 하늘, orbit = 가운데 별과 궤도 두 줄, rope = 하늘 · 아래쪽 땅과 둥글게 도는 줄, swing = 끊긴 천장 · 비스듬한 줄 · 아래쪽 바닥, disc = 하늘에 떠 있는 원반 셋(가장자리 띠), stairs = 풀밭 블록 피라미드, ski = 눈 비탈 · 깃발 기둥 · 주황 울타리(1 · 2 · 3개).
       (function () {
         var games = {
           ringle_flight: { ko: "링글 플라이트", en: "Ringle Flight", theme: "flight" },
@@ -258,7 +260,8 @@
           ringle_rope: { ko: "링글 줄넘기", en: "Ringle Rope", theme: "rope" },
           ringle_swing: { ko: "링글 줄타기", en: "Ringle Swing", theme: "swing" },
           ringle_disc: { ko: "링글 원반 점프", en: "Ringle Disc Jump", theme: "disc" },
-          ringle_stairs: { ko: "링글 계단", en: "Ringle Stairs", theme: "stairs" }
+          ringle_stairs: { ko: "링글 계단", en: "Ringle Stairs", theme: "stairs" },
+          ringle_ski: { ko: "링글 스키", en: "Ringle Ski", theme: "ski" }
         };
         var params = new URLSearchParams(location.search);
         var key = "miniringle-language-choice";
