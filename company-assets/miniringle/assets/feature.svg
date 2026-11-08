@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 500" width="1024" height="500" role="img" aria-label="MiniRingle 4P Minigame">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="75%">
+      <stop offset="0" stop-color="#fbf3e4"/>
+      <stop offset="1" stop-color="#ead9bd"/>
+    </radialGradient>
+    <!-- 얼굴 4개: 원점(0,0)이 원의 중심, 반지름 74 -->
+    <g id="smile">
+      <circle r="74" fill="#e5484d" stroke="#3a2f28" stroke-width="6"/>
+      <circle cx="-22" cy="-14" r="8" fill="#3a2f28"/>
+      <circle cx="22" cy="-14" r="8" fill="#3a2f28"/>
+      <path d="M-26 14 Q0 40 26 14" fill="none" stroke="#3a2f28" stroke-width="7" stroke-linecap="round"/>
+    </g>
+    <g id="wink">
+      <circle r="74" fill="#3e7bfa" stroke="#3a2f28" stroke-width="6"/>
+      <circle cx="-22" cy="-14" r="8" fill="#3a2f28"/>
+      <path d="M10 -13 Q22 -23 34 -13" fill="none" stroke="#3a2f28" stroke-width="7" stroke-linecap="round"/>
+      <path d="M-24 12 Q0 42 24 12 Z" fill="#3a2f28" stroke="#3a2f28" stroke-width="4" stroke-linejoin="round"/>
+    </g>
+    <g id="wow">
+      <circle r="74" fill="#30a46c" stroke="#3a2f28" stroke-width="6"/>
+      <circle cx="-22" cy="-16" r="12" fill="#fff" stroke="#3a2f28" stroke-width="5"/>
+      <circle cx="22" cy="-16" r="12" fill="#fff" stroke="#3a2f28" stroke-width="5"/>
+      <circle cx="-22" cy="-15" r="5" fill="#3a2f28"/>
+      <circle cx="22" cy="-15" r="5" fill="#3a2f28"/>
+      <ellipse cy="28" rx="11" ry="14" fill="#3a2f28"/>
+    </g>
+    <g id="joy">
+      <circle r="74" fill="#f5c400" stroke="#3a2f28" stroke-width="6"/>
+      <path d="M-34 -8 l12 -12 l12 12" fill="none" stroke="#3a2f28" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M10 -8 l12 -12 l12 12" fill="none" stroke="#3a2f28" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M-28 10 Q0 52 28 10 Z" fill="#3a2f28" stroke="#3a2f28" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M-12 24 Q0 36 12 24" fill="#e5484d"/>
+    </g>
+  </defs>
+  <rect width="1024" height="500" fill="url(#bg)"/>
+
+  <g fill="#3a2f28" opacity="0.12">
+    <ellipse cx="224" cy="256" rx="58" ry="10"/>
+    <ellipse cx="416" cy="256" rx="58" ry="10"/>
+    <ellipse cx="608" cy="256" rx="58" ry="10"/>
+    <ellipse cx="800" cy="256" rx="58" ry="10"/>
+  </g>
+  <use href="#smile" xlink:href="#smile" x="224" y="156"/>
+  <use href="#wink" xlink:href="#wink" x="416" y="170"/>
+  <use href="#wow" xlink:href="#wow" x="608" y="152"/>
+  <use href="#joy" xlink:href="#joy" x="800" y="166"/>
+
+  <text x="512" y="372" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="92" font-weight="900" letter-spacing="2" fill="#3a2f28">MiniRingle</text>
+  <text x="512" y="438" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="36" font-weight="700" letter-spacing="10" fill="#8a6f55">4P MINIGAME</text>
+</svg>
