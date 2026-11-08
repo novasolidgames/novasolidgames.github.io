@@ -95,6 +95,9 @@
       .stage[data-theme="stairs"]::before, .stage[data-theme="stairs"]::after { display: none; }
       .stage[data-theme="ski"] { background: linear-gradient(#5b5470, #5b5470) 30% 30% / 1.2% 16% no-repeat, linear-gradient(#5b5470, #5b5470) 62% 30% / 1.2% 16% no-repeat, linear-gradient(#5b5470, #5b5470) 40% 72% / 1.2% 16% no-repeat, linear-gradient(#5b5470, #5b5470) 72% 72% / 1.2% 16% no-repeat, linear-gradient(90deg, #ff8a3d, #ff8a3d) 4% 0 / 1% 100% no-repeat, linear-gradient(90deg, #ff8a3d, #ff8a3d) 96% 0 / 1% 100% no-repeat, #f4faff; }
       .stage[data-theme="ski"]::before, .stage[data-theme="ski"]::after { display: none; }
+      /* 링글 기차: 두 색 바둑판 네모 판 */
+      .stage[data-theme="train"] { background: repeating-conic-gradient(#e9f7d9 0 25%, #d3edbe 0 50%) 50% 50% / 16% 16%, #9edbff; }
+      .stage[data-theme="train"]::before, .stage[data-theme="train"]::after { display: none; }
       /* 링글 물수제비: 하늘 + 아래쪽 물(물결 · 세모 · 물보라 고리), 링글이 수면을 낮게 스치듯 튄다 */
       .stage[data-theme="skip"] { background: linear-gradient(#bfe8fa, #e3f5fd); }
       .stage[data-theme="skip"]::before, .stage[data-theme="skip"]::after { display: none; }
@@ -261,7 +264,8 @@
           ringle_swing: { ko: "링글 줄타기", en: "Ringle Swing", theme: "swing" },
           ringle_disc: { ko: "링글 원반 점프", en: "Ringle Disc Jump", theme: "disc" },
           ringle_stairs: { ko: "링글 계단", en: "Ringle Stairs", theme: "stairs" },
-          ringle_ski: { ko: "링글 스키", en: "Ringle Ski", theme: "ski" }
+          ringle_ski: { ko: "링글 스키", en: "Ringle Ski", theme: "ski" },
+          ringle_train: { ko: "링글 기차", en: "Ringle Train", theme: "train" }
         };
         var params = new URLSearchParams(location.search);
         var key = "miniringle-language-choice";
