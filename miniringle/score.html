@@ -107,6 +107,8 @@
       /* 링글 로켓: 하늘 + 빨간 링글 · 머리 위 게이지 호(노랑 · 초록) · 옆 코인 줄 */
       .stage[data-theme="rocket"] { background: radial-gradient(circle at 50% 72%, #e4574c 0 6.5%, transparent 7%), radial-gradient(circle at 50% 72%, transparent 0 17%, #ffd23f 17% 19.5%, transparent 20%), radial-gradient(circle at 50% 72%, transparent 0 17%, #3fd36b 17% 19.5%, transparent 20%) 50% 0 / 14% 30% no-repeat, radial-gradient(circle, #ffc83a 0 45%, transparent 50%) 76% 30% / 4% 4% no-repeat, radial-gradient(circle, #ffc83a 0 45%, transparent 50%) 76% 40% / 4% 4% no-repeat, radial-gradient(circle, #ffc83a 0 45%, transparent 50%) 76% 50% / 4% 4% no-repeat, linear-gradient(#6ec3ff, #ddf3ff); }
       .stage[data-theme="rocket"]::before, .stage[data-theme="rocket"]::after { display: none; }
+      .stage[data-theme="dig"] { background: radial-gradient(circle at 50% 47%, #e4574c 0 6.5%, transparent 7%), radial-gradient(circle, #ffc83a 0 45%, transparent 50%) 66% 50% / 4% 4% no-repeat, radial-gradient(circle, #ffc83a 0 45%, transparent 50%) 74% 50% / 4% 4% no-repeat, radial-gradient(circle, #ffc83a 0 45%, transparent 50%) 82% 50% / 4% 4% no-repeat, linear-gradient(transparent 28%, #c98a55 28% 32%, transparent 32%), linear-gradient(transparent 58%, #c98a55 58% 62%, transparent 62%), linear-gradient(transparent 88%, #c98a55 88% 92%, transparent 92%), linear-gradient(#5e3d28, #3e2819); }
+      .stage[data-theme="dig"]::before, .stage[data-theme="dig"]::after { display: none; }
       /* 링글 물수제비: 하늘 + 아래쪽 물(물결 · 세모 · 물보라 고리), 링글이 수면을 낮게 스치듯 튄다 */
       .stage[data-theme="skip"] { background: linear-gradient(#bfe8fa, #e3f5fd); }
       .stage[data-theme="skip"]::before, .stage[data-theme="skip"]::after { display: none; }
@@ -277,7 +279,8 @@
           ringle_train: { ko: "링글 기차", en: "Ringle Train", theme: "train" },
           ringle_runner: { ko: "링글 러너", en: "Ringle Runner", theme: "runner" },
           ringle_brick: { ko: "링글 벽돌깨기", en: "Ringle Bricks", theme: "brick" },
-          ringle_rocket: { ko: "링글 로켓", en: "Ringle Rocket", theme: "rocket" }
+          ringle_rocket: { ko: "링글 로켓", en: "Ringle Rocket", theme: "rocket" },
+          ringle_dig: { ko: "링글 땅파기", en: "Ringle Dig", theme: "dig" }
         };
         var params = new URLSearchParams(location.search);
         var key = "miniringle-language-choice";
