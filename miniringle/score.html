@@ -114,6 +114,9 @@
       .stage[data-theme="elevator"]::before, .stage[data-theme="elevator"]::after { display: none; }
       .stage[data-theme="stones"] { background: radial-gradient(circle at 40% 56%, #e4574c 0 6.5%, transparent 7%), radial-gradient(circle, #ffc83a 0 45%, transparent 50%) 56% 40% / 4% 4% no-repeat, radial-gradient(circle, #ffc83a 0 45%, transparent 50%) 62% 37% / 4% 4% no-repeat, radial-gradient(circle, #ffc83a 0 45%, transparent 50%) 68% 40% / 4% 4% no-repeat, linear-gradient(#eadfc6, #eadfc6) 32% 63% / 12% 4% no-repeat, linear-gradient(#eadfc6, #eadfc6) 46% 63% / 12% 4% no-repeat, linear-gradient(#eadfc6, #eadfc6) 74% 63% / 12% 4% no-repeat, linear-gradient(#eadfc6, #eadfc6) 88% 63% / 12% 4% no-repeat, linear-gradient(#3fa2d8, #3fa2d8) 0 100% / 100% 36% no-repeat, linear-gradient(#e3f6ff, #7ec8ff); }
       .stage[data-theme="stones"]::before, .stage[data-theme="stones"]::after { display: none; }
+      /* 링글 균형 잡기: 하늘 + 풀밭 · 받침대 · 시소 판 · 가운데 칸 · 빨간 링글 */
+      .stage[data-theme="balance"] { background: radial-gradient(circle at 50% 54%, #e4574c 0 6.5%, transparent 7%), linear-gradient(#f2d77a, #f2d77a) 50% 63% / 20% 2.5% no-repeat, linear-gradient(#c98f5a, #c98f5a) 50% 62% / 66% 4% no-repeat, linear-gradient(#a47a58, #a47a58) 50% 100% / 4% 34% no-repeat, linear-gradient(#7bc96b, #7bc96b) 0 100% / 100% 20% no-repeat, linear-gradient(#7ec8ff, #e3f6ff); }
+      .stage[data-theme="balance"]::before, .stage[data-theme="balance"]::after { display: none; }
       /* 링글 물수제비: 하늘 + 아래쪽 물(물결 · 세모 · 물보라 고리), 링글이 수면을 낮게 스치듯 튄다 */
       .stage[data-theme="skip"] { background: linear-gradient(#bfe8fa, #e3f5fd); }
       .stage[data-theme="skip"]::before, .stage[data-theme="skip"]::after { display: none; }
@@ -287,7 +290,8 @@
           ringle_rocket: { ko: "링글 로켓", en: "Ringle Rocket", theme: "rocket" },
           ringle_dig: { ko: "링글 땅파기", en: "Ringle Dig", theme: "dig" },
           ringle_elevator: { ko: "링글 엘리베이터", en: "Ringle Elevator", theme: "elevator" },
-          ringle_stones: { ko: "링글 징검다리", en: "Ringle Stones", theme: "stones" }
+          ringle_stones: { ko: "링글 징검다리", en: "Ringle Stones", theme: "stones" },
+          ringle_balance: { ko: "링글 균형 잡기", en: "Ringle Balance", theme: "balance" }
         };
         var params = new URLSearchParams(location.search);
         var key = "miniringle-language-choice";
