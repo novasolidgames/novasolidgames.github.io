@@ -109,6 +109,9 @@
       .stage[data-theme="rocket"]::before, .stage[data-theme="rocket"]::after { display: none; }
       .stage[data-theme="dig"] { background: radial-gradient(circle at 50% 47%, #e4574c 0 6.5%, transparent 7%), radial-gradient(circle, #ffc83a 0 45%, transparent 50%) 66% 50% / 4% 4% no-repeat, radial-gradient(circle, #ffc83a 0 45%, transparent 50%) 74% 50% / 4% 4% no-repeat, radial-gradient(circle, #ffc83a 0 45%, transparent 50%) 82% 50% / 4% 4% no-repeat, linear-gradient(transparent 28%, #c98a55 28% 32%, transparent 32%), linear-gradient(transparent 58%, #c98a55 58% 62%, transparent 62%), linear-gradient(transparent 88%, #c98a55 88% 92%, transparent 92%), linear-gradient(#5e3d28, #3e2819); }
       .stage[data-theme="dig"]::before, .stage[data-theme="dig"]::after { display: none; }
+      /* 링글 엘리베이터: 하늘 + 세로 막대 셋 · 오렌지 발판들 · 빨간 링글 · 공중 코인 줄 */
+      .stage[data-theme="elevator"] { background: radial-gradient(circle at 36% 56%, #e4574c 0 6.5%, transparent 7%), radial-gradient(circle, #ffc83a 0 45%, transparent 50%) 54% 36% / 4% 4% no-repeat, radial-gradient(circle, #ffc83a 0 45%, transparent 50%) 60% 34% / 4% 4% no-repeat, radial-gradient(circle, #ffc83a 0 45%, transparent 50%) 66% 36% / 4% 4% no-repeat, linear-gradient(#ff8a5c, #ff8a5c) 28% 66% / 16% 4% no-repeat, linear-gradient(#ff8a5c, #ff8a5c) 56% 46% / 16% 4% no-repeat, linear-gradient(#ff8a5c, #ff8a5c) 84% 70% / 16% 4% no-repeat, linear-gradient(#4a5a7a, #4a5a7a) 36% 0 / 2% 100% no-repeat, linear-gradient(#4a5a7a, #4a5a7a) 64% 0 / 2% 100% no-repeat, linear-gradient(#4a5a7a, #4a5a7a) 92% 0 / 2% 100% no-repeat, linear-gradient(#e3f6ff, #7ec8ff); }
+      .stage[data-theme="elevator"]::before, .stage[data-theme="elevator"]::after { display: none; }
       /* 링글 물수제비: 하늘 + 아래쪽 물(물결 · 세모 · 물보라 고리), 링글이 수면을 낮게 스치듯 튄다 */
       .stage[data-theme="skip"] { background: linear-gradient(#bfe8fa, #e3f5fd); }
       .stage[data-theme="skip"]::before, .stage[data-theme="skip"]::after { display: none; }
@@ -280,7 +283,8 @@
           ringle_runner: { ko: "링글 러너", en: "Ringle Runner", theme: "runner" },
           ringle_brick: { ko: "링글 벽돌깨기", en: "Ringle Bricks", theme: "brick" },
           ringle_rocket: { ko: "링글 로켓", en: "Ringle Rocket", theme: "rocket" },
-          ringle_dig: { ko: "링글 땅파기", en: "Ringle Dig", theme: "dig" }
+          ringle_dig: { ko: "링글 땅파기", en: "Ringle Dig", theme: "dig" },
+          ringle_elevator: { ko: "링글 엘리베이터", en: "Ringle Elevator", theme: "elevator" }
         };
         var params = new URLSearchParams(location.search);
         var key = "miniringle-language-choice";
