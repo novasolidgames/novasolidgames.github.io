@@ -139,6 +139,22 @@
       }
       .stage[data-theme="flip"].has-podium { padding-bottom: 28px; background: #fff8ec; }
       .stage[data-theme="flip"]::before, .stage[data-theme="flip"]::after { display: none; }
+      /* 링글 분류하기: 옅은 판 + 맨 아래 회색 벨트(초록 원) · 양옆 흰 바구니(초록 원 · 빨강 원). 시상대가 있으면 판만 */
+      .stage[data-theme="sort"] {
+        padding-bottom: 80px;
+        background:
+          radial-gradient(circle, #33a66b 0 11px, transparent 12px) calc(50% - 90px) calc(100% - 22px) / 28px 28px no-repeat,
+          linear-gradient(#fff, #fff) calc(50% - 90px) calc(100% - 16px) / 40px 40px no-repeat,
+          linear-gradient(#3a2f28, #3a2f28) calc(50% - 90px) calc(100% - 13px) / 46px 46px no-repeat,
+          radial-gradient(circle, #e5484d 0 11px, transparent 12px) calc(50% + 90px) calc(100% - 22px) / 28px 28px no-repeat,
+          linear-gradient(#fff, #fff) calc(50% + 90px) calc(100% - 16px) / 40px 40px no-repeat,
+          linear-gradient(#3a2f28, #3a2f28) calc(50% + 90px) calc(100% - 13px) / 46px 46px no-repeat,
+          radial-gradient(circle, #33a66b 0 12px, transparent 13px) 50% calc(100% - 22px) / 30px 30px no-repeat,
+          linear-gradient(#c9d3dd, #c9d3dd) 50% 100% / 44px 64px no-repeat,
+          #fbeaea;
+      }
+      .stage[data-theme="sort"].has-podium { padding-bottom: 28px; background: #fbeaea; }
+      .stage[data-theme="sort"]::before, .stage[data-theme="sort"]::after { display: none; }
       /* 링글 물수제비: 하늘 + 아래쪽 물(물결 · 세모 · 물보라 고리), 링글이 수면을 낮게 스치듯 튄다 */
       .stage[data-theme="skip"] { background: linear-gradient(#bfe8fa, #e3f5fd); }
       .stage[data-theme="skip"]::before, .stage[data-theme="skip"]::after { display: none; }
@@ -316,7 +332,8 @@
           ringle_balance: { ko: "링글 균형 잡기", en: "Ringle Balance", theme: "balance" },
           ringle_archery: { ko: "링글 활쏘기", en: "Ringle Archery", theme: "archery" },
           ringle_shape: { ko: "링글 모양 바꾸기", en: "Ringle Shapes", theme: "shape" },
-          ringle_flip: { ko: "링글 카드 뒤집기", en: "Ringle Flip", theme: "flip" }
+          ringle_flip: { ko: "링글 카드 뒤집기", en: "Ringle Flip", theme: "flip" },
+          ringle_sort: { ko: "링글 분류하기", en: "Ringle Sort", theme: "sort" }
         };
         var params = new URLSearchParams(location.search);
         var key = "miniringle-language-choice";
