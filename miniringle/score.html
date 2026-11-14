@@ -190,6 +190,16 @@
       }
       .stage[data-theme="dodge"].has-podium { padding-bottom: 28px; background: linear-gradient(#a8deff, #d8f0ff); }
       .stage[data-theme="dodge"]::before, .stage[data-theme="dodge"]::after { display: none; }
+      /* 링글 밀어내기: 하늘 + 가운데 둥근 무대(갈색 테두리), 무대 위 빨간 링글과 밀려 나가는 빨간 세모. 시상대가 있으면 하늘만 */
+      .stage[data-theme="push"] {
+        background:
+          radial-gradient(circle, #e5484d 0 17px, #2b2350 18px 20px, transparent 21px) calc(50% - 20px) 50% / 44px 44px no-repeat,
+          conic-gradient(from 150deg at 50% 100%, #e85a5a 0 60deg, transparent 0) calc(50% + 120px) calc(50% - 10px) / 30px 26px no-repeat,
+          radial-gradient(circle, #f4e3b5 0 104px, #b98a4e 105px 112px, transparent 113px) 50% 50% / 230px 230px no-repeat,
+          linear-gradient(#a8deff, #d8f0ff);
+      }
+      .stage[data-theme="push"].has-podium { background: linear-gradient(#a8deff, #d8f0ff); }
+      .stage[data-theme="push"]::before, .stage[data-theme="push"]::after { display: none; }
       /* 링글 물수제비: 하늘 + 아래쪽 물(물결 · 세모 · 물보라 고리), 링글이 수면을 낮게 스치듯 튄다 */
       .stage[data-theme="skip"] { background: linear-gradient(#bfe8fa, #e3f5fd); }
       .stage[data-theme="skip"]::before, .stage[data-theme="skip"]::after { display: none; }
@@ -371,7 +381,8 @@
           ringle_sort: { ko: "링글 분류하기", en: "Ringle Sort", theme: "sort" },
           ringle_mole: { ko: "링글 두더지", en: "Ringle Mole", theme: "mole" },
           ringle_paint: { ko: "링글 땅따먹기", en: "Ringle Paint", theme: "paint" },
-          ringle_dodge: { ko: "링글 피하기", en: "Ringle Dodge", theme: "dodge" }
+          ringle_dodge: { ko: "링글 피하기", en: "Ringle Dodge", theme: "dodge" },
+          ringle_push: { ko: "링글 밀어내기", en: "Ringle Push", theme: "push" }
         };
         var params = new URLSearchParams(location.search);
         var key = "miniringle-language-choice";
