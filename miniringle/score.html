@@ -200,6 +200,19 @@
       }
       .stage[data-theme="push"].has-podium { background: linear-gradient(#a8deff, #d8f0ff); }
       .stage[data-theme="push"]::before, .stage[data-theme="push"]::after { display: none; }
+      /* 링글 보트: 양쪽 풀밭 사이 모래 강가와 파란 강, 강 위 파란 부표 둘과 빨간 세모, 맨 아래 분홍 보트에 탄 빨간 링글. 시상대가 있으면 강만 */
+      .stage[data-theme="boat"] {
+        padding-bottom: 80px;
+        background:
+          radial-gradient(circle, #e5484d 0 13px, #2b2350 14px 16px, transparent 17px) 50% calc(100% - 26px) / 34px 34px no-repeat,
+          linear-gradient(#f4b6b6, #f4b6b6) 50% calc(100% - 14px) / 30px 58px no-repeat,
+          conic-gradient(from 150deg at 50% 100%, #e85a5a 0 60deg, transparent 0) calc(50% + 46px) calc(100% - 120px) / 30px 26px no-repeat,
+          radial-gradient(circle, #4fa8ff 0 7px, #2b2350 8px 9px, transparent 10px) calc(50% - 44px) calc(100% - 170px) / 20px 20px no-repeat,
+          radial-gradient(circle, #4fa8ff 0 7px, #2b2350 8px 9px, transparent 10px) calc(50% + 44px) calc(100% - 170px) / 20px 20px no-repeat,
+          linear-gradient(to right, #7ccb5b 0 28%, #f2dfa0 28% 31%, #4fb6e8 31% 69%, #f2dfa0 69% 72%, #7ccb5b 72%);
+      }
+      .stage[data-theme="boat"].has-podium { padding-bottom: 28px; background: linear-gradient(to right, #7ccb5b 0 28%, #f2dfa0 28% 31%, #4fb6e8 31% 69%, #f2dfa0 69% 72%, #7ccb5b 72%); }
+      .stage[data-theme="boat"]::before, .stage[data-theme="boat"]::after { display: none; }
       /* 링글 물수제비: 하늘 + 아래쪽 물(물결 · 세모 · 물보라 고리), 링글이 수면을 낮게 스치듯 튄다 */
       .stage[data-theme="skip"] { background: linear-gradient(#bfe8fa, #e3f5fd); }
       .stage[data-theme="skip"]::before, .stage[data-theme="skip"]::after { display: none; }
@@ -382,7 +395,8 @@
           ringle_mole: { ko: "링글 두더지", en: "Ringle Mole", theme: "mole" },
           ringle_paint: { ko: "링글 땅따먹기", en: "Ringle Paint", theme: "paint" },
           ringle_dodge: { ko: "링글 피하기", en: "Ringle Dodge", theme: "dodge" },
-          ringle_push: { ko: "링글 밀어내기", en: "Ringle Push", theme: "push" }
+          ringle_push: { ko: "링글 밀어내기", en: "Ringle Push", theme: "push" },
+          ringle_boat: { ko: "링글 보트", en: "Ringle Boat", theme: "boat" }
         };
         var params = new URLSearchParams(location.search);
         var key = "miniringle-language-choice";
