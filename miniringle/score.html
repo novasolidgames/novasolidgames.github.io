@@ -168,6 +168,17 @@
       }
       .stage[data-theme="mole"].has-podium { padding-bottom: 28px; background: #eaf4e2; }
       .stage[data-theme="mole"]::before, .stage[data-theme="mole"]::after { display: none; }
+      /* 링글 땅따먹기: 두 빛깔 바둑판 + 맨 아래 칠한 칸 줄과 그 끝의 빨간 링글. 시상대가 있으면 바둑판만 */
+      .stage[data-theme="paint"] {
+        padding-bottom: 80px;
+        background:
+          radial-gradient(circle, #e5484d 0 17px, #2b2350 18px 20px, transparent 21px) calc(50% + 60px) calc(100% - 22px) / 44px 44px no-repeat,
+          linear-gradient(#ec7d76, #ec7d76) calc(50% - 40px) calc(100% - 24px) / 160px 40px no-repeat,
+          repeating-conic-gradient(#f4f1e6 0 25%, #e8e3d2 0 50%) 0 0 / 80px 80px,
+          #f4f1e6;
+      }
+      .stage[data-theme="paint"].has-podium { padding-bottom: 28px; background: repeating-conic-gradient(#f4f1e6 0 25%, #e8e3d2 0 50%) 0 0 / 80px 80px, #f4f1e6; }
+      .stage[data-theme="paint"]::before, .stage[data-theme="paint"]::after { display: none; }
       /* 링글 물수제비: 하늘 + 아래쪽 물(물결 · 세모 · 물보라 고리), 링글이 수면을 낮게 스치듯 튄다 */
       .stage[data-theme="skip"] { background: linear-gradient(#bfe8fa, #e3f5fd); }
       .stage[data-theme="skip"]::before, .stage[data-theme="skip"]::after { display: none; }
@@ -347,7 +358,8 @@
           ringle_shape: { ko: "링글 모양 바꾸기", en: "Ringle Shapes", theme: "shape" },
           ringle_flip: { ko: "링글 카드 뒤집기", en: "Ringle Flip", theme: "flip" },
           ringle_sort: { ko: "링글 분류하기", en: "Ringle Sort", theme: "sort" },
-          ringle_mole: { ko: "링글 두더지", en: "Ringle Mole", theme: "mole" }
+          ringle_mole: { ko: "링글 두더지", en: "Ringle Mole", theme: "mole" },
+          ringle_paint: { ko: "링글 땅따먹기", en: "Ringle Paint", theme: "paint" }
         };
         var params = new URLSearchParams(location.search);
         var key = "miniringle-language-choice";
