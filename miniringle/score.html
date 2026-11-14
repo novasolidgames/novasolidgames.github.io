@@ -155,6 +155,19 @@
       }
       .stage[data-theme="sort"].has-podium { padding-bottom: 28px; background: #fbeaea; }
       .stage[data-theme="sort"]::before, .stage[data-theme="sort"]::after { display: none; }
+      /* 링글 두더지: 옅은 판 + 맨 아래 풀밭에 구멍 셋(링글 하나가 나온다). 시상대가 있으면 판만 */
+      .stage[data-theme="mole"] {
+        padding-bottom: 80px;
+        background:
+          radial-gradient(circle, #e5484d 0 17px, transparent 18px) 50% calc(100% - 34px) / 36px 36px no-repeat,
+          radial-gradient(ellipse, #3a2f28 0 14px, transparent 15px) calc(50% - 90px) calc(100% - 18px) / 56px 22px no-repeat,
+          radial-gradient(ellipse, #3a2f28 0 14px, transparent 15px) 50% calc(100% - 18px) / 56px 22px no-repeat,
+          radial-gradient(ellipse, #3a2f28 0 14px, transparent 15px) calc(50% + 90px) calc(100% - 18px) / 56px 22px no-repeat,
+          linear-gradient(#9ccb6b, #9ccb6b) 50% 100% / 100% 52px no-repeat,
+          #eaf4e2;
+      }
+      .stage[data-theme="mole"].has-podium { padding-bottom: 28px; background: #eaf4e2; }
+      .stage[data-theme="mole"]::before, .stage[data-theme="mole"]::after { display: none; }
       /* 링글 물수제비: 하늘 + 아래쪽 물(물결 · 세모 · 물보라 고리), 링글이 수면을 낮게 스치듯 튄다 */
       .stage[data-theme="skip"] { background: linear-gradient(#bfe8fa, #e3f5fd); }
       .stage[data-theme="skip"]::before, .stage[data-theme="skip"]::after { display: none; }
@@ -333,7 +346,8 @@
           ringle_archery: { ko: "링글 활쏘기", en: "Ringle Archery", theme: "archery" },
           ringle_shape: { ko: "링글 모양 바꾸기", en: "Ringle Shapes", theme: "shape" },
           ringle_flip: { ko: "링글 카드 뒤집기", en: "Ringle Flip", theme: "flip" },
-          ringle_sort: { ko: "링글 분류하기", en: "Ringle Sort", theme: "sort" }
+          ringle_sort: { ko: "링글 분류하기", en: "Ringle Sort", theme: "sort" },
+          ringle_mole: { ko: "링글 두더지", en: "Ringle Mole", theme: "mole" }
         };
         var params = new URLSearchParams(location.search);
         var key = "miniringle-language-choice";
