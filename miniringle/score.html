@@ -225,6 +225,19 @@
       }
       .stage[data-theme="upstairs"].has-podium { padding-bottom: 28px; background: linear-gradient(#7ec8f2, #c9e9fb); }
       .stage[data-theme="upstairs"]::before, .stage[data-theme="upstairs"]::after { display: none; }
+      /* 링글 무궁화: 풀밭 위 위로 좁아지는 모래 길(세 칸)과 길 끝의 주황 술래(맨 아래 길 위에 페이지의 빨간 링글이 선다). 시상대가 있으면 하늘 · 풀밭만 */
+      .stage[data-theme="redlight"] {
+        padding-bottom: 80px;
+        background:
+          radial-gradient(circle, #ff8e3c 0 15px, #2b2350 16px 18px, transparent 19px) 50% calc(100% - 150px) / 40px 40px no-repeat,
+          linear-gradient(#e7c08a, #e7c08a) 50% calc(100% - 118px) / 44px 12px no-repeat,
+          linear-gradient(#ebcb92, #ebcb92) 50% calc(100% - 92px) / 76px 26px no-repeat,
+          linear-gradient(#e7c08a, #e7c08a) 50% calc(100% - 58px) / 112px 34px no-repeat,
+          linear-gradient(#ebcb92, #ebcb92) 50% 100% / 150px 58px no-repeat,
+          linear-gradient(#8fd3f4 0 45%, #8bcf6a 45%);
+      }
+      .stage[data-theme="redlight"].has-podium { padding-bottom: 28px; background: linear-gradient(#8fd3f4 0 45%, #8bcf6a 45%); }
+      .stage[data-theme="redlight"]::before, .stage[data-theme="redlight"]::after { display: none; }
       /* 링글 물수제비: 하늘 + 아래쪽 물(물결 · 세모 · 물보라 고리), 링글이 수면을 낮게 스치듯 튄다 */
       .stage[data-theme="skip"] { background: linear-gradient(#bfe8fa, #e3f5fd); }
       .stage[data-theme="skip"]::before, .stage[data-theme="skip"]::after { display: none; }
@@ -409,7 +422,8 @@
           ringle_dodge: { ko: "링글 피하기", en: "Ringle Dodge", theme: "dodge" },
           ringle_push: { ko: "링글 밀어내기", en: "Ringle Push", theme: "push" },
           ringle_boat: { ko: "링글 보트", en: "Ringle Boat", theme: "boat" },
-          ringle_upstairs: { ko: "링글 계단 오르기", en: "Ringle Upstairs", theme: "upstairs" }
+          ringle_upstairs: { ko: "링글 계단 오르기", en: "Ringle Upstairs", theme: "upstairs" },
+          ringle_redlight: { ko: "링글 무궁화", en: "Ringle Red Light", theme: "redlight" }
         };
         var params = new URLSearchParams(location.search);
         var key = "miniringle-language-choice";
