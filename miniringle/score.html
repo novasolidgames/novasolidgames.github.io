@@ -213,6 +213,18 @@
       }
       .stage[data-theme="boat"].has-podium { padding-bottom: 28px; background: linear-gradient(to right, #7ccb5b 0 28%, #f2dfa0 28% 31%, #4fb6e8 31% 69%, #f2dfa0 69% 72%, #7ccb5b 72%); }
       .stage[data-theme="boat"]::before, .stage[data-theme="boat"]::after { display: none; }
+      /* 링글 계단 오르기: 하늘 위 오른쪽 위로 이어지는 계단 넷(맨 위 계단 위에 페이지의 빨간 링글이 선다). 시상대가 있으면 하늘만 */
+      .stage[data-theme="upstairs"] {
+        padding-bottom: 80px;
+        background:
+          linear-gradient(#e8a75c, #e8a75c) calc(50% + 8px) calc(100% - 84px) / 52px 14px no-repeat,
+          linear-gradient(#e8a75c, #e8a75c) calc(50% - 24px) calc(100% - 68px) / 52px 14px no-repeat,
+          linear-gradient(#e8a75c, #e8a75c) calc(50% - 56px) calc(100% - 52px) / 52px 14px no-repeat,
+          linear-gradient(#e8a75c, #e8a75c) calc(50% - 88px) calc(100% - 36px) / 52px 14px no-repeat,
+          linear-gradient(#7ec8f2, #c9e9fb);
+      }
+      .stage[data-theme="upstairs"].has-podium { padding-bottom: 28px; background: linear-gradient(#7ec8f2, #c9e9fb); }
+      .stage[data-theme="upstairs"]::before, .stage[data-theme="upstairs"]::after { display: none; }
       /* 링글 물수제비: 하늘 + 아래쪽 물(물결 · 세모 · 물보라 고리), 링글이 수면을 낮게 스치듯 튄다 */
       .stage[data-theme="skip"] { background: linear-gradient(#bfe8fa, #e3f5fd); }
       .stage[data-theme="skip"]::before, .stage[data-theme="skip"]::after { display: none; }
@@ -396,7 +408,8 @@
           ringle_paint: { ko: "링글 땅따먹기", en: "Ringle Paint", theme: "paint" },
           ringle_dodge: { ko: "링글 피하기", en: "Ringle Dodge", theme: "dodge" },
           ringle_push: { ko: "링글 밀어내기", en: "Ringle Push", theme: "push" },
-          ringle_boat: { ko: "링글 보트", en: "Ringle Boat", theme: "boat" }
+          ringle_boat: { ko: "링글 보트", en: "Ringle Boat", theme: "boat" },
+          ringle_upstairs: { ko: "링글 계단 오르기", en: "Ringle Upstairs", theme: "upstairs" }
         };
         var params = new URLSearchParams(location.search);
         var key = "miniringle-language-choice";
