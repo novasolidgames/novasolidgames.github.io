@@ -238,6 +238,21 @@
       }
       .stage[data-theme="redlight"].has-podium { padding-bottom: 28px; background: linear-gradient(#8fd3f4 0 45%, #8bcf6a 45%); }
       .stage[data-theme="redlight"]::before, .stage[data-theme="redlight"]::after { display: none; }
+      /* 링글 빙글탑: 하늘 + 가운데 원기둥과 위로 갈수록 작아지는 초록 층 세 개(맨 아래 층 위에 페이지의 빨간 링글이 선다). 시상대가 있으면 하늘만 */
+      .stage[data-theme="tower"] {
+        padding-bottom: 80px;
+        background:
+          radial-gradient(ellipse closest-side, #7bc96f 0 96%, transparent 100%) 50% calc(100% - 140px) / 96px 22px no-repeat,
+          linear-gradient(#3f7f45, #3f7f45) 50% calc(100% - 132px) / 92px 10px no-repeat,
+          radial-gradient(ellipse closest-side, #64b85a 0 96%, transparent 100%) 50% calc(100% - 74px) / 132px 28px no-repeat,
+          linear-gradient(#3f7f45, #3f7f45) 50% calc(100% - 64px) / 128px 12px no-repeat,
+          radial-gradient(ellipse closest-side, #7bc96f 0 96%, transparent 100%) 50% calc(100% - 8px) / 170px 34px no-repeat,
+          linear-gradient(#3f7f45, #3f7f45) 50% 100% / 166px 12px no-repeat,
+          linear-gradient(#f4eee2, #f4eee2) 50% 100% / 34px 100% no-repeat,
+          linear-gradient(#8fd3f4, #c9e9fb);
+      }
+      .stage[data-theme="tower"].has-podium { padding-bottom: 28px; background: linear-gradient(#8fd3f4, #c9e9fb); }
+      .stage[data-theme="tower"]::before, .stage[data-theme="tower"]::after { display: none; }
       /* 링글 물수제비: 하늘 + 아래쪽 물(물결 · 세모 · 물보라 고리), 링글이 수면을 낮게 스치듯 튄다 */
       .stage[data-theme="skip"] { background: linear-gradient(#bfe8fa, #e3f5fd); }
       .stage[data-theme="skip"]::before, .stage[data-theme="skip"]::after { display: none; }
@@ -423,7 +438,8 @@
           ringle_push: { ko: "링글 밀어내기", en: "Ringle Push", theme: "push" },
           ringle_boat: { ko: "링글 보트", en: "Ringle Boat", theme: "boat" },
           ringle_upstairs: { ko: "링글 계단 오르기", en: "Ringle Upstairs", theme: "upstairs" },
-          ringle_redlight: { ko: "링글 무궁화", en: "Ringle Red Light", theme: "redlight" }
+          ringle_redlight: { ko: "링글 무궁화", en: "Ringle Red Light", theme: "redlight" },
+          ringle_tower: { ko: "링글 빙글탑", en: "Ringle Spin Tower", theme: "tower" }
         };
         var params = new URLSearchParams(location.search);
         var key = "miniringle-language-choice";
