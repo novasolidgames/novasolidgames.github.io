@@ -263,6 +263,20 @@
       }
       .stage[data-theme="blockade"].has-podium { background: radial-gradient(circle, #efe4cb 0 12px, #a8977a 12px 14px, transparent 15px) 0 0 / 36px 36px, #4fb2d6; }
       .stage[data-theme="blockade"]::before, .stage[data-theme="blockade"]::after { display: none; }
+      /* 링글 빙글판: 보라 판의 동그란 홈 + 빨간 링글 네 개가 한 줄(파란 링글 둘). 시상대가 있으면 홈만 */
+      .stage[data-theme="spinboard"] {
+        background:
+          radial-gradient(circle, #e5484d 0 11px, transparent 12px) 30% 46% / 36px 36px no-repeat,
+          radial-gradient(circle, #e5484d 0 11px, transparent 12px) 42% 46% / 36px 36px no-repeat,
+          radial-gradient(circle, #e5484d 0 11px, transparent 12px) 54% 46% / 36px 36px no-repeat,
+          radial-gradient(circle, #e5484d 0 11px, transparent 12px) 66% 46% / 36px 36px no-repeat,
+          radial-gradient(circle, #3b8bd8 0 11px, transparent 12px) 40% 70% / 36px 36px no-repeat,
+          radial-gradient(circle, #3b8bd8 0 11px, transparent 12px) 62% 24% / 36px 36px no-repeat,
+          radial-gradient(circle, #463a92 0 12px, transparent 13px) 0 0 / 36px 36px,
+          #5b4ba8;
+      }
+      .stage[data-theme="spinboard"].has-podium { background: radial-gradient(circle, #463a92 0 12px, transparent 13px) 0 0 / 36px 36px, #5b4ba8; }
+      .stage[data-theme="spinboard"]::before, .stage[data-theme="spinboard"]::after { display: none; }
       /* 링글 물수제비: 하늘 + 아래쪽 물(물결 · 세모 · 물보라 고리), 링글이 수면을 낮게 스치듯 튄다 */
       .stage[data-theme="skip"] { background: linear-gradient(#bfe8fa, #e3f5fd); }
       .stage[data-theme="skip"]::before, .stage[data-theme="skip"]::after { display: none; }
@@ -450,7 +464,8 @@
           ringle_upstairs: { ko: "링글 계단 오르기", en: "Ringle Upstairs", theme: "upstairs" },
           ringle_redlight: { ko: "링글 무궁화", en: "Ringle Red Light", theme: "redlight" },
           ringle_tower: { ko: "링글 빙글탑", en: "Ringle Spin Tower", theme: "tower" },
-          ringle_blockade: { ko: "링글 길막기", en: "Ringle Blockade", theme: "blockade" }
+          ringle_blockade: { ko: "링글 길막기", en: "Ringle Blockade", theme: "blockade" },
+          ringle_spinboard: { ko: "링글 빙글판", en: "Ringle Spinboard", theme: "spinboard" }
         };
         var params = new URLSearchParams(location.search);
         var key = "miniringle-language-choice";
