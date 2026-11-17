@@ -253,6 +253,16 @@
       }
       .stage[data-theme="tower"].has-podium { padding-bottom: 28px; background: linear-gradient(#8fd3f4, #c9e9fb); }
       .stage[data-theme="tower"]::before, .stage[data-theme="tower"]::after { display: none; }
+      /* 링글 길막기: 물 위 징검다리 돌 격자 + 나무 벽 두 개(빨간 링글이 돌 위에 선다). 시상대가 있으면 돌 격자만 */
+      .stage[data-theme="blockade"] {
+        background:
+          linear-gradient(#e5484d, #e5484d) 30% 38% / 64px 8px no-repeat,
+          linear-gradient(#3b8bd8, #3b8bd8) 72% 58% / 8px 64px no-repeat,
+          radial-gradient(circle, #efe4cb 0 12px, #a8977a 12px 14px, transparent 15px) 0 0 / 36px 36px,
+          #4fb2d6;
+      }
+      .stage[data-theme="blockade"].has-podium { background: radial-gradient(circle, #efe4cb 0 12px, #a8977a 12px 14px, transparent 15px) 0 0 / 36px 36px, #4fb2d6; }
+      .stage[data-theme="blockade"]::before, .stage[data-theme="blockade"]::after { display: none; }
       /* 링글 물수제비: 하늘 + 아래쪽 물(물결 · 세모 · 물보라 고리), 링글이 수면을 낮게 스치듯 튄다 */
       .stage[data-theme="skip"] { background: linear-gradient(#bfe8fa, #e3f5fd); }
       .stage[data-theme="skip"]::before, .stage[data-theme="skip"]::after { display: none; }
@@ -399,7 +409,7 @@
     <script src="site-config.js?v=1"></script>
     <script src="store-badge.js?v=1"></script>
     <script>
-      // 게임이 복사한 자랑 링크(?g=게임 Id&s=점수&lang=ko|en, 여럿이면 &p=시상대 · 높이 게임은 &u=h)를 보여 준다. 서버가 없어 점수는 링크에 적힌 그대로다(자랑용).
+      // 게임이 복사한 자랑 링크(?g=게임 Id&s=점수&lang=ko|en, 여럿이면 &p=시상대 · 높이 게임은 &u=h · 승패 게임은 &u=w)를 보여 준다. 서버가 없어 점수는 링크에 적힌 그대로다(자랑용).
       // 값은 글자로만 넣는다(textContent) - 링크를 고쳐도 페이지에 코드가 끼어들지 못한다. 개인정보는 링크에 없다.
       // 무대(theme)는 게임마다: flight = 위아래 벽 사이 통로(기본), jump = 하늘 · 구름 발판, skip = 하늘 · 아래쪽 물, reflex = 초록 신호, stack = 하늘 · 받침 땅 · 링글 탑, memory = 링글 넷(하나만 색이 찬다), match = 도형 넷, climb = 좌우 벽 사이 통로, descend = 바위 사이 통로와 천장, shoot = 위가 짙은 하늘, orbit = 가운데 별과 궤도 두 줄, rope = 하늘 · 아래쪽 땅과 둥글게 도는 줄, swing = 끊긴 천장 · 비스듬한 줄 · 아래쪽 바닥, disc = 하늘에 떠 있는 원반 셋(가장자리 띠), stairs = 풀밭 블록 피라미드, ski = 눈 비탈 · 깃발 기둥 · 주황 울타리(1 · 2 · 3개), runner = 하늘 · 흙 땅과 풀 줄 · 구덩이 · 빨간 세모 둘 · 노란 코인 줄.
       (function () {
@@ -439,7 +449,8 @@
           ringle_boat: { ko: "링글 보트", en: "Ringle Boat", theme: "boat" },
           ringle_upstairs: { ko: "링글 계단 오르기", en: "Ringle Upstairs", theme: "upstairs" },
           ringle_redlight: { ko: "링글 무궁화", en: "Ringle Red Light", theme: "redlight" },
-          ringle_tower: { ko: "링글 빙글탑", en: "Ringle Spin Tower", theme: "tower" }
+          ringle_tower: { ko: "링글 빙글탑", en: "Ringle Spin Tower", theme: "tower" },
+          ringle_blockade: { ko: "링글 길막기", en: "Ringle Blockade", theme: "blockade" }
         };
         var params = new URLSearchParams(location.search);
         var key = "miniringle-language-choice";
@@ -448,6 +459,7 @@
         var valid = /^\d{1,12}$/.test(raw);
         document.querySelector("[data-stage]").setAttribute("data-theme", game ? game.theme : "flight");
         var height = params.get("u") === "h";//높이로 겨루는 게임(링글 탑 쌓기 팀전)
+        var win = params.get("u") === "w";//점수 없는 승패 게임(링글 길막기) - 이긴 사람만 실려 오고 숫자 대신 "승리!"
         // 시상대(p=점수-번호.번호_점수-번호): 팀 최대 4, 번호는 1~4만. 형식이 어긋난 팀은 뺀다.
         var teams = [];
         (params.get("p") || "").split("_").slice(0, 4).forEach(function (part) {
@@ -456,6 +468,7 @@
         });
         var colors = { 1: ["#e5484d", "#b5303a"], 2: ["#3b8bd8", "#2a6bb0"], 3: ["#4cb36a", "#2f8f57"], 4: ["#f0b23c", "#c48a1e"] };
         function unit(value, lang) {
+          if (win) return lang === "ko" ? "승리!" : "Win!";
           var text = value.toLocaleString(lang === "ko" ? "ko-KR" : "en-US");
           return height ? (lang === "ko" ? text + "층" : text + (value === 1 ? " floor" : " floors")) : text;
         }
