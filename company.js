@@ -4,7 +4,7 @@
   Object.assign(translations, {
     rogueGenre: {en: 'DECKBUILDING TOWER DEFENSE', ko: '덱 빌딩 타워 디펜스'},
     rogueTitle: {en: 'Rogue Deck: Tower Defense', ko: '로그덱: 타워 디펜스'},
-    rogueDescription: {en: 'Build a deck, expand the battlefield, and defend your base.', ko: '덱을 짜고 전장을 넓히며 기지를 지켜내세요.'},
+    rogueDescription: {en: 'Build your deck, deploy towers, and stop enemy waves with effect cards.', ko: '덱을 짜고 타워를 세우세요. 효과 카드로 적의 공세를 막아내세요.'},
     rogueDetails: {en: 'Explore the game', ko: '게임 자세히 보기'},
     rogueStatus: {en: 'Coming soon', ko: '출시 예정'},
   });
