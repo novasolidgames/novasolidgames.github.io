@@ -8,7 +8,7 @@
     rogueDetails: {en: 'Explore the game', ko: '게임 자세히 보기'},
     rogueStatus: {en: 'Coming soon', ko: '출시 예정'},
   });
-  const miniUrl = "";
+  const miniUrl = "https://play.google.com/store/apps/details?id=com.novasolidgames.miniringle";
   const storageKey = 'nsg-kage-language-choice';
   const headingNodes = [...document.querySelectorAll('h1.display, h2.display')];
   // 원본의 단어별 등장 마스크는 언어 변경 후에도 동일한 구조로 복원한다.
