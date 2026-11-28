@@ -161,12 +161,11 @@ body[data-layout-footer=space] .foot-grid > div { min-width:0; }
 .game-entry .game-info p { min-height:3.4em; line-height:1.7; }
 .game-entry .game-actions { display:grid; grid-template-columns:minmax(0,1fr) 150px; align-items:center; gap:16px; min-height:58px; margin-top:auto; padding-top:24px; }
 .game-entry .game-actions>a { display:flex; align-items:center; min-height:58px; margin:0; padding:0; border-bottom:0; }
-.game-entry #mini-store { justify-content:center; width:150px; border:1px solid var(--line); border-radius:8px; background:rgba(223,231,224,.04); text-align:center; padding:8px; }
 .game-entry .game-legal-links { min-height:44px; }
 .foot .footer-company-title { display:flex; align-items:center; gap:10px; min-height:32px; }
 .footer-company-title .company-symbol { width:26px; height:30px; flex:none; }
 .footer-company-title .company-symbol img { height:30px; width:97px; }
-@media(max-width:480px) { .game-entry .game-actions { grid-template-columns:minmax(0,1fr) 132px; gap:10px; } .game-entry #mini-store,.game-entry .store-badge { width:132px; } }
+@media(max-width:480px) { .game-entry .game-actions { grid-template-columns:minmax(0,1fr) 132px; gap:10px; } .game-entry .store-badge { width:132px; } }
 
 /* 앞쪽의 성운·먼지와 먼 배경을 서로 다른 속도로 합성해 깊이감을 만든다. */
 #space-backdrop { inset:-70px 0; }
